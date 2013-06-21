@@ -1,0 +1,288 @@
+                p {
+                    font-style: normal;
+                    font-weight: 200;
+                    format('truetype');
+                }
+                
+                
+                
+                .rl {
+                    font-size: 20px;
+                    font-weight: 1600;
+                    font-style: bold;
+                    font-style: normal;
+                    color: #990000;
+                    margin-top:1em;
+                    font-family: "Verdana" !important;
+                    local ("Verdana")
+                    src: url("Verdana.ttf") !important;
+                }
+                
+                .reg, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r16, .r18, .r20, .r22, .r24 {
+                    font-weight: 400;
+                    font-style: normal;
+                }
+                
+                
+                .r6 { font-size: 6px; }
+                
+                .r7 { font-size: 7px; }
+                
+                .r8 { font-size: 8px; }
+                
+                .r9 { font-size: 9px; }
+                
+                .r10 { font-size: 10px; }
+                
+                .r11 { font-size: 11px; }
+                
+                .r12 { font-size: 12px; }
+                
+                .r13 { font-size: 13px; }
+                
+                .r14 { font-size: 14px; }
+                
+                .r16 { font-size: 16px; }
+                
+                .r18 { font-size: 18px; }
+                
+                .r20 { font-size: 20px; }
+                
+                .r22 { font-size: 22px; }
+                
+                .r24 { font-size: 24px; }
+                
+                
+                
+                
+                .smcp {
+                    text-transform: lowercase;
+                    -moz-font-feature-settings:'smcp=1';
+                }
+                
+                
+                body { background: white; color:#444444;}
+                section { display: block; float: left; margin: 0; width: 100%; }
+                
+                #flypage_spec ul {
+                    list-style:none;
+                    margin:0;
+                }
+                
+                ul, ol {
+                    margin:20px 0 20px 20px;
+                }
+                
+                #flypage_spec ul li {
+                    border-bottom-color:#303030;
+                    border-bottom-style:solid;
+                    border-bottom-width:1px;
+                    padding:7px 10px;
+                    color:#737373;
+                    font-size:14px;
+                }
+                
+                
+                #top { width: 920px; margin: 0 20px; padding: 0px; }
+                header { background: #ccc; }
+                header h1 { margin: 0; padding: 30px 16px; }
+                
+                #fonts { margin: 0;  padding: 0; background: #eee; position: fixed; left: 28px; top: 8px; width: 920px; }
+                
+                #fonts li { display: inline;  list-style: none; cursor: pointer; margin: 0 0.5em; }
+                #fonts li span { margin: 2em 0; }
+                
+                #custom { margin: 0; padding: 0; }
+                #custom p { margin: 0; padding: 0; }
+                #custom p.sizelabel {  color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 10px; line-height: 10px; font-style: normal; }
+                
+                UL.tabNavigation { list-style: none; margin: 10px 12px; padding: 8px; }
+                UL.tabNavigation LI { display: inline; font-family: arial, sans-serif; font-size:10px;  }
+                UL.tabNavigation LI A { padding: 4px 6px; background-color: #ccc; color: #000; text-decoration: none; }
+                UL.tabNavigation LI A.selected, UL.tabNavigation LI A:hover { background-color: #333; color: #fff; padding-top: 8px; }
+                UL.tabNavigation LI A:focus { outline: 0; }
+                div.tabs > div { padding: 20px; }
+                div.tabs > div h2 { margin-top: 0; }
+                
+                .textsettingCol1 { width: 450px; float: left; }
+                .textsettingCol2 { width: 450px; float: right; }
+                
+                .multicolumn3 {
+                    -moz-column-count: 3;
+                    -moz-column-gap: 20px;
+                    -webkit-column-count: 3;
+                    -webkit-column-gap: 20px;
+                    column-count: 3;
+                    column-gap: 20px;
+                }
+                
+                .multicolumn2 {
+                    -moz-column-count: 2;
+                    -moz-column-gap: 20px;
+                    -webkit-column-count: 2;
+                    -webkit-column-gap: 20px;
+                    column-count: 2;
+                    column-gap: 20px;
+                }
+                
+                #pie {
+                    color: #666; 
+                    font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; 
+                    font-size: 10px; 
+                    line-height: 10px; 
+                    font-style: normal;
+                    margin: 0;
+                    padding: 20px;
+                    width: 920px; 
+                }
+                
+                .colorBox {
+                    padding-top:34px;
+                    padding-bottom:34px;
+                    padding-left:34px;
+                    
+                }
+                
+                .greenWhite {
+                    
+                    background-color:#7b9e91;
+                    color:white;
+                    
+                }
+                
+                .brownWhite {
+                    
+                    background-color:#756262;
+                    color:white;
+                    
+                }
+                
+                .blueBrown {
+                    background-color:#8caab3;
+                    color:#634949;
+                }
+                
+                .paleDark {
+                    background-color:#e8e1e1;
+                    color:#302f2f;
+                }
+                .darkPale {
+                    background-color:#302f2f;
+                    color:#e8e1e1;
+                }
+                .redWhite {
+                    background-color:#b02727;
+                    color:#e8e1e1;
+                }
+                .whiteRed {
+                    background-color:#e8e1e1;
+                    color:#b02727;
+                }
+                
+                
+                
+                /*
+	99Lime.com HTML KickStart by Joshua Gatcke
+	style.css
+	
+*/
+
+
+/*---------------------------------
+	@font-face tests
+-----------------------------------*/
+   @font-face {
+    font-family: specimen;
+    src: url(specimen.ttf);
+}
+
+* {
+font-family:'specimen';
+}
+
+
+
+/*---------------------------------
+	IMPORTS
+-----------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+
+/*---------------------------------
+	OVERRIDES
+
+h1,h2,h3,h4,h5,h6{
+font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+thead th,
+tbody th{
+font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+button,
+a.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+.menu{
+font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+blockquote{
+font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+-----------------------------------*/
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
+body{
+margin:0;
+padding:0;
+}
+
+#wrap{
+width:960px;/*960*/
+background:#fff;
+margin:30px auto 30px auto;
+padding:0;
+border:1px solid #ccc;
+}
+
+.menu{
+margin:-1px -1px 0 -1px;
+}
+
+
+#footer{
+text-align:center;
+padding:20px;
+margin:0;
+background:#efefef;
+border-top:1px solid #ccc;
+color:#999;
+font-size:0.8em;
+text-shadow:0px 1px 1px #fff;
+position: relative;
+top:0;
+left:0;
+}
+
+	#link-top{
+	position: absolute;
+	top:10px;
+	right:10px;
+	*right:25px;/*IE 7 ONLY*/
+	left:auto;
+	color:#666;
+	text-decoration:none;
+	display: inline-block;
+	padding:5px 10px;
+	background:#e5e5e5;
+	line-height:100%;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	}
