@@ -814,7 +814,7 @@ h4 small {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 10px 25px;
+  margin: 0 0 0px 10px;
 }
 
 ul ul,
@@ -825,7 +825,7 @@ ol ul {
 }
 
 li {
-  line-height: 20px;
+  line-height: 1em;
 }
 
 ul.unstyled,
@@ -3940,7 +3940,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   margin-left: 0;
   list-style: none;
 }
@@ -4055,7 +4055,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav-tabs > li {
-  margin-bottom: -1px;
+  margin-bottom: 0px;
 }
 
 .nav-tabs > li > a {

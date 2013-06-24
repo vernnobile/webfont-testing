@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html manifest="../fontdragr.manifest">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Font Testing Page (Requires Firefox 3.6+/Chrome 13+)</title>
@@ -89,11 +89,11 @@ font-size:14px;
 }
 
 
-#top { width: 920px; margin: 0 20px; padding: 0px; }
-header { background: #ccc; }
+        #top {padding: 0px;}
+        header { height:100px;background-color: #586E85; color:#fff; }
 header h1 { margin: 0; padding: 30px 16px; }
 
-#fonts { margin: 0;  padding: 0; background: #eee; position: fixed; left: 28px; top: 8px; width: 920px; }
+#fonts { margin: 0;  padding: 0; background: #eee; position: fixed; left: 28px; top: 8px; }
 
 #fonts li { display: inline;  list-style: none; cursor: pointer; margin: 0 0.5em; }
 #fonts li span { margin: 2em 0; }
@@ -102,11 +102,7 @@ header h1 { margin: 0; padding: 30px 16px; }
 #custom p { margin: 0; padding: 0; }
 #custom p.sizelabel {  color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 10px; line-height: 10px; font-style: normal; }
 
-UL.tabNavigation { list-style: none; margin: 10px 12px; padding: 8px; }
-UL.tabNavigation LI { display: inline; font-family: arial, sans-serif; font-size:10px;  }
-UL.tabNavigation LI A { padding: 4px 6px; background-color: #ccc; color: #000; text-decoration: none; }
-UL.tabNavigation LI A.selected, UL.tabNavigation LI A:hover { background-color: #333; color: #fff; padding-top: 8px; }
-UL.tabNavigation LI A:focus { outline: 0; }
+
 div.tabs > div { padding: 20px; }
 div.tabs > div h2 { margin-top: 0; }
 
@@ -139,7 +135,6 @@ div.tabs > div h2 { margin-top: 0; }
 	font-style: normal;
 	margin: 0;
 	padding: 20px;
-	width: 920px; 
 }
 
       .colorBox {
@@ -184,6 +179,8 @@ background-color:#b02727;
 background-color:#e8e1e1;
         color:#b02727;
 }
+        
+
       
 </style> <script type="text/javascript" src="js/prettify.js"></script>
     <script type="text/javascript" src="js/kickstart.js"></script>
@@ -196,10 +193,10 @@ background-color:#e8e1e1;
 $(function () {
     var tabContainers = $('div.tabs > div');
     
-    $('div.tabs ul.tabNavigation a').click(function () {
+    $('div.tabs ul.nav-tabs a').click(function () {
         tabContainers.hide().filter(this.hash).show();
         
-        $('div.tabs ul.tabNavigation a').removeClass('selected');
+        $('div.tabs ul.nav-tabs a').removeClass('selected');
         $(this).addClass('selected');
         
         return false;
@@ -209,34 +206,40 @@ $(function () {
   
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Bootstrap -->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
   </head>
   <body spellcheck="false">
     <!-- Header -->
+      <div class="row-fluid">
     <section id="top">
       <header>
-        <h1>Drag fonts here!</h1>
+          <div class="" style="padding:25px;width:100;float:left"><img style="height:50px" src="images/nt_logo.png"/></div>
+          <p style="padding:30px 0 0 0; font-size:2em;">drag fonts here for testing | truetype or opentype</p>
+          
+          
       </header>
       <ul id="fonts">
       </ul>
     </section>
     <!-- Specimen -->
+      
+          <div class="span12">
     <section id="custom">
       <div class="tabs">
         <!-- tabs -->
-        <ul class="tabNavigation">
+        <ul class="nav nav-tabs">
           <li><a href="#headlines">Headlines</a></li>
           <li><a href="#EMheadlines">EM Headlines</a></li>
           <li><a href="#text">Text</a></li>
           <li><a href="#adhesion">Adhesion</a></li>
           <li><a href="#hamburgefonstiv">Hamburgefonstiv</a></li>
-          <li><a href="#lowercases">Lowercase</a></li>
+          <li><a href="#wizards">Wizards</a></li>
           <li><a href="#caps">Caps</a></li>
           <li><a href="#allcaps">All Caps</a></li>
           <li><a href="#layout">Layout</a></li>
           <li><a href="#kern">Kern</a></li>
 </ul>
-<ul class="tabNavigation">
+<ul class="nav nav-tabs">
           <li><a href="#more">Extended Latin</a></li>
           <li><a href="#Cyrillic1">Cyrillic Sentence Case</a></li>
           <li><a href="#Cyrillic2">Cyrillic Uppercase</a></li>
@@ -246,7 +249,7 @@ $(function () {
         </ul>
 <!-- Cyrillic Sentence Case -->
 <div id="Cyrillic1">
-<div style="overflow: hidden; width: 920px;">
+<div style="overflow: hidden; ">
 <p class="sizelabel">21px</p>
 <p style="font-size: 21px;">Все счастливые семьи похожи друг на друга, каждая несчастливая семья несчастлива по-своему. Все смешалось в доме Облонских. Жена узнала, что муж был в связи с бывшею в их доме француженкою-гувернанткой, и объявила мужу, что не может жить с ним в одном доме. Положение это продолжалось уже третий день и мучительно чувствовалось и самими супругами, и всеми членами семьи, и домочадцами. Все члены семьи и домочадцы чувствовали, что нет смысла в их сожительстве и что на каждом постоялом дворе случайно сошедшиеся люди более связаны между собой, чем они, члены семьи и домочадцы Облонских. Жена не выходила из своих комнат, мужа третий день не было дома. Дети бегали по всему дому, как потерянные; англичанка поссорилась с экономкой и написала записку приятельнице, прося приискать ей новое место; повар ушел вчера со двора, во время самого обеда; черная кухарка и кучер просили расчета. На третий день после ссоры князь Степан Аркадьич Облонский — Стива, как его звали в свете, — в обычный час, то есть в восемь часов утра, проснулся не в спальне жены, а в своем кабинете, на сафьянном диване. Он повернул свое полное, выхоленное тело на пружинах дивана, как бы желая опять заснуть надолго, с другой стороны крепко обнял подушку и прижался к ней щекой; но вдруг вскочил, сел на диван и открыл глаза.</p>
 <p class="sizelabel">16px</p>
@@ -262,7 +265,7 @@ $(function () {
 
 <!-- Cyrillic UpperCase -->
 <div id="Cyrillic2">
-<div style="overflow: hidden; width: 920px;">
+<div style="overflow: hidden; ">
 <p class="sizelabel">21px</p>
 <p style="font-size: 21px;">
 ВСЕ СЧАСТЛИВЫЕ СЕМЬИ ПОХОЖИ ДРУГ НА ДРУГА, КАЖДАЯ НЕСЧАСТЛИВАЯ СЕМЬЯ НЕСЧАСТЛИВА ПО-СВОЕМУ. ВСЕ СМЕШАЛОСЬ В ДОМЕ ОБЛОНСКИХ. ЖЕНА УЗНАЛА, ЧТО МУЖ БЫЛ В СВЯЗИ С БЫВШЕЮ В ИХ ДОМЕ ФРАНЦУЖЕНКОЮ-ГУВЕРНАНТКОЙ, И ОБЪЯВИЛА МУЖУ, ЧТО НЕ МОЖЕТ ЖИТЬ С НИМ В ОДНОМ ДОМЕ. ПОЛОЖЕНИЕ ЭТО ПРОДОЛЖАЛОСЬ УЖЕ ТРЕТИЙ ДЕНЬ И МУЧИТЕЛЬНО ЧУВСТВОВАЛОСЬ И САМИМИ СУПРУГАМИ, И ВСЕМИ ЧЛЕНАМИ СЕМЬИ, И ДОМОЧАДЦАМИ. ВСЕ ЧЛЕНЫ СЕМЬИ И ДОМОЧАДЦЫ ЧУВСТВОВАЛИ, ЧТО НЕТ СМЫСЛА В ИХ СОЖИТЕЛЬСТВЕ И ЧТО НА КАЖДОМ ПОСТОЯЛОМ ДВОРЕ СЛУЧАЙНО СОШЕДШИЕСЯ ЛЮДИ БОЛЕЕ СВЯЗАНЫ МЕЖДУ СОБОЙ, ЧЕМ ОНИ, ЧЛЕНЫ СЕМЬИ И ДОМОЧАДЦЫ ОБЛОНСКИХ. ЖЕНА НЕ ВЫХОДИЛА ИЗ СВОИХ КОМНАТ, МУЖА ТРЕТИЙ ДЕНЬ НЕ БЫЛО ДОМА. ДЕТИ БЕГАЛИ ПО ВСЕМУ ДОМУ, КАК ПОТЕРЯННЫЕ; АНГЛИЧАНКА ПОССОРИЛАСЬ С ЭКОНОМКОЙ И НАПИСАЛА ЗАПИСКУ ПРИЯТЕЛЬНИЦЕ, ПРОСЯ ПРИИСКАТЬ ЕЙ НОВОЕ МЕСТО; ПОВАР УШЕЛ ВЧЕРА СО ДВОРА, ВО ВРЕМЯ САМОГО ОБЕДА; ЧЕРНАЯ КУХАРКА И КУЧЕР ПРОСИЛИ РАСЧЕТА. НА ТРЕТИЙ ДЕНЬ ПОСЛЕ ССОРЫ КНЯЗЬ СТЕПАН АРКАДЬИЧ ОБЛОНСКИЙ — СТИВА, КАК ЕГО ЗВАЛИ В СВЕТЕ, — В ОБЫЧНЫЙ ЧАС, ТО ЕСТЬ В ВОСЕМЬ ЧАСОВ УТРА, ПРОСНУЛСЯ НЕ В СПАЛЬНЕ ЖЕНЫ, А В СВОЕМ КАБИНЕТЕ, НА САФЬЯННОМ ДИВАНЕ. ОН ПОВЕРНУЛ СВОЕ ПОЛНОЕ, ВЫХОЛЕННОЕ ТЕЛО НА ПРУЖИНАХ ДИВАНА, КАК БЫ ЖЕЛАЯ ОПЯТЬ ЗАСНУТЬ НАДОЛГО, С ДРУГОЙ СТОРОНЫ КРЕПКО ОБНЯЛ ПОДУШКУ И ПРИЖАЛСЯ К НЕЙ ЩЕКОЙ; НО ВДРУГ ВСКОЧИЛ, СЕЛ НА ДИВАН И ОТКРЫЛ ГЛАЗА.</p>
@@ -273,7 +276,7 @@ $(function () {
 
 <!-- Cyrillic LowerCase -->
 <div id="Cyrillic3">
-<div style="overflow: hidden; width: 920px;">
+<div style="overflow: hidden; ">
 <p class="sizelabel">21px</p>
 <p style="font-size: 21px;">
 все счастливые семьи похожи друг на друга, каждая несчастливая семья несчастлива по-своему. все смешалось в доме облонских. жена узнала, что муж был в связи с бывшею в их доме француженкою-гувернанткой, и объявила мужу, что не может жить с ним в одном доме. положение это продолжалось уже третий день и мучительно чувствовалось и самими супругами, и всеми членами семьи, и домочадцами. все члены семьи и домочадцы чувствовали, что нет смысла в их сожительстве и что на каждом постоялом дворе случайно сошедшиеся люди более связаны между собой, чем они, члены семьи и домочадцы облонских. жена не выходила из своих комнат, мужа третий день не было дома. дети бегали по всему дому, как потерянные; англичанка поссорилась с экономкой и написала записку приятельнице, прося приискать ей новое место; повар ушел вчера со двора, во время самого обеда; черная кухарка и кучер просили расчета. на третий день после ссоры князь степан аркадьич облонский — стива, как его звали в свете, — в обычный час, то есть в восемь часов утра, проснулся не в спальне жены, а в своем кабинете, на сафьянном диване. он повернул свое полное, выхоленное тело на пружинах дивана, как бы желая опять заснуть надолго, с другой стороны крепко обнял подушку и прижался к ней щекой; но вдруг вскочил, сел на диван и открыл глаза.</p>
@@ -285,7 +288,7 @@ $(function () {
         <!-- Headlines -->
 
         <div id="headlines">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+          <div style="white-space: nowrap; overflow: hidden; ">
             <p class="sizelabel">72px</p>
             <p style="font-size: 72px;">Grumpy wizards make toxic brew for the
               evil Queen and Jack. A quick movement of the enemy will jeopardize
@@ -542,7 +545,7 @@ $(function () {
         </div>
         <!-- EM Headlines -->
         <div id="EMheadlines">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+          <div style="white-space: nowrap; overflow: hidden; ">
             <p class="sizelabel">5em</p>
             <p style="font-size: 5em;"> Capitalism pursuing aftershave creates a
               twisted agency for quarterdecks out for destruction personifies
@@ -636,7 +639,7 @@ $(function () {
         <!-- End of em Headlines -->
         <!-- COLOURS -->
         <div id="colours">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+          <div style="white-space: nowrap; overflow: hidden; ">
 <p style="font-size:34pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA | YUKON | GERONIMO | XRAYSPEX<br><br></p>
 <p style="font-size:28pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA | YUKON | GERONIMO | XRAYSPEX<br><br></p>
 <p style="font-size:21pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA | YUKON | GERONIMO | XRAYSPEX<br><br></p>
@@ -694,8 +697,8 @@ $(function () {
         </div>
         <!-- End of COLOURS -->
         <!-- Text -->
-        <div id="text" style="width: 920px;">
-          <div class="textsettingCol1">
+        <div id="text" style="">
+          <div class="span5">
             <p class="sizelabel">20px</p>
             <p style="font-size: 20px;">He formed The Fall (named after the novel by Camus) with friends after dropping out of college at the age of 19. He gave up his job at Salford docks shortly after to devote his full energies to the Fall, and has continued to do so ever since. Smith married Chicagoan guitarist (and Fall band member, 1983–89, 1994–96) Brix Smith on 19 July 1983, though they divorced in 1989. He has since remarried twice; his second wife was Saffron Prior who used to work for The Fall's fan club. He married his present wife, Eleni (sometimes called Elenor or Elena) Poulou, in 2001, and she joined The Fall in September 2002.
 When British DJ and Fall champion John Peel died in 2004, Smith made a notorious appearance on the BBC's Newsnight show.[3] Regarded by many as a bewildering performance, Smith has made his appreciation for Peel clear in several subsequent interviews. Nevertheless, the two only met a handful of times. Though he broke his hip while promoting the album The Real New Fall LP (Formerly Country on the Click) in 2004, Smith refused to cancel an upcoming American tour, instead choosing to perform in a wheelchair. Unfortunately the pain and medication caused a number of dates to be cancelled.
@@ -711,13 +714,14 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
 When British DJ and Fall champion John Peel died in 2004, Smith made a notorious appearance on the BBC's Newsnight show.[3] Regarded by many as a bewildering performance, Smith has made his appreciation for Peel clear in several subsequent interviews. Nevertheless, the two only met a handful of times. Though he broke his hip while promoting the album The Real New Fall LP (Formerly Country on the Click) in 2004, Smith refused to cancel an upcoming American tour, instead choosing to perform in a wheelchair. Unfortunately the pain and medication caused a number of dates to be cancelled.
 In January 2005, The Fall were the subject of The Fall: The Wonderful and Frightening World of Mark E. Smith, a BBC Four television documentary. The following August, Smith received the "Contribution to Music" award at the Diesel-U-Music Awards. Smith's autobiography, Renegade: The Gospel According to Mark E. Smith, recorded with Manchester-based writer Austin Collings, was published by Viking Books in April 2008. The latest studio album by The Fall, Ersatz GB, was released on 14 November 2011 01234567890 </p>
             <p>&nbsp;</p>
+          </div>
+            <div class="span7">
             <p class="sizelabel">17px</p>
             <p style="font-size: 17px;">He formed The Fall (named after the novel by Camus) with friends after dropping out of college at the age of 19. He gave up his job at Salford docks shortly after to devote his full energies to the Fall, and has continued to do so ever since. Smith married Chicagoan guitarist (and Fall band member, 1983–89, 1994–96) Brix Smith on 19 July 1983, though they divorced in 1989. He has since remarried twice; his second wife was Saffron Prior who used to work for The Fall's fan club. He married his present wife, Eleni (sometimes called Elenor or Elena) Poulou, in 2001, and she joined The Fall in September 2002.
 When British DJ and Fall champion John Peel died in 2004, Smith made a notorious appearance on the BBC's Newsnight show.[3] Regarded by many as a bewildering performance, Smith has made his appreciation for Peel clear in several subsequent interviews. Nevertheless, the two only met a handful of times. Though he broke his hip while promoting the album The Real New Fall LP (Formerly Country on the Click) in 2004, Smith refused to cancel an upcoming American tour, instead choosing to perform in a wheelchair. Unfortunately the pain and medication caused a number of dates to be cancelled.
 In January 2005, The Fall were the subject of The Fall: The Wonderful and Frightening World of Mark E. Smith, a BBC Four television documentary. The following August, Smith received the "Contribution to Music" award at the Diesel-U-Music Awards. Smith's autobiography, Renegade: The Gospel According to Mark E. Smith, recorded with Manchester-based writer Austin Collings, was published by Viking Books in April 2008. The latest studio album by The Fall, Ersatz GB, was released on 14 November 2011 01234567890 </p>
             <p>&nbsp;</p>
-          </div>
-          <div class="textsettingCol2">
+
             <p class="sizelabel">16px</p>
             <p style="font-size: 16px;">He formed The Fall (named after the novel by Camus) with friends after dropping out of college at the age of 19. He gave up his job at Salford docks shortly after to devote his full energies to the Fall, and has continued to do so ever since. Smith married Chicagoan guitarist (and Fall band member, 1983–89, 1994–96) Brix Smith on 19 July 1983, though they divorced in 1989. He has since remarried twice; his second wife was Saffron Prior who used to work for The Fall's fan club. He married his present wife, Eleni (sometimes called Elenor or Elena) Poulou, in 2001, and she joined The Fall in September 2002.
 When British DJ and Fall champion John Peel died in 2004, Smith made a notorious appearance on the BBC's Newsnight show.[3] Regarded by many as a bewildering performance, Smith has made his appreciation for Peel clear in several subsequent interviews. Nevertheless, the two only met a handful of times. Though he broke his hip while promoting the album The Real New Fall LP (Formerly Country on the Click) in 2004, Smith refused to cancel an upcoming American tour, instead choosing to perform in a wheelchair. Unfortunately the pain and medication caused a number of dates to be cancelled.
@@ -758,7 +762,7 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
         <!-- End of Text -->
         <!-- adhesion -->
         <div id="adhesion">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+          <div style="white-space: nowrap; overflow: hidden; ">
             <p class="sizelabel">72px</p>
             <p style="font-size: 72px;">adhesion donnishness indianians deaden
               on ode so sheenie died dashed dens seaside easines nonseasoned
@@ -797,8 +801,8 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
           </div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-          <div style="width: 920px;">
-            <div class="textsettingCol1">
+          <div style="">
+            <div class="span6">
               <p class="sizelabel">16px</p>
               <p style="font-size: 16px;">dined shoon hooded ahead shined hashed
                 dinned soon nod nine sane inned ani session doe node idea side
@@ -833,7 +837,7 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
                 sinned needed send nooned odd disdain shinned anion had shied</p>
               <p>&nbsp;</p>
             </div>
-            <div class="textsettingCol2">
+            <div class="span6">
               <p class="sizelabel">13px</p>
               <p style="font-size: 13px;">dined shoon hooded ahead shined hashed
                 dinned soon nod nine sane inned ani session doe node idea side
@@ -883,7 +887,7 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
         </div>
         <!-- hamburgefonstiv -->
         <div id="hamburgefonstiv">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+          <div style="white-space: nowrap; overflow: hidden; ">
             <p class="sizelabel">72px</p>
             <p style="font-size: 72px;">fortieth boring trait favoring barrage
               referring thrusting tannest embargo sausage gaining astutest augur
@@ -957,8 +961,8 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
           </div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-          <div style="width: 920px;">
-            <div class="textsettingCol1">
+          <div style="">
+            <div class="span6">
               <p class="sizelabel">16px</p>
               <p style="font-size: 16px;">fortieth boring trait favoring barrage
                 referring thrusting tannest embargo sausage gaining astutest
@@ -1002,7 +1006,7 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
                 masseuse</p>
               <p>&nbsp;</p>
             </div>
-            <div class="textsettingCol2">
+            <div class="span6">
               <p class="sizelabel">13px</p>
               <p style="font-size: 13px;">fortieth boring trait favoring barrage
                 referring thrusting tannest embargo sausage gaining astutest
@@ -1062,9 +1066,9 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
             </div>
           </div>
         </div>
-        <!-- Lowercases a-z -->
-        <div id="lowercases">
-          <div style="white-space: nowrap; overflow: hidden; width: 920px;">
+        <!-- WIZARDS -->
+        <div id="wizards">
+          <div style="white-space: nowrap; overflow: hidden; ">
             <p class="sizelabel">72px</p>
             <p style="font-size: 72px;">the five boxing wizards jump quickly
               pack my red box with five dozen quality jugs a very big box sailed
@@ -1094,10 +1098,7 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
               pack my red box with five dozen quality jugs a very big box sailed
               up then whizzed quickly from japan</p>
           </div>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <div style="width: 920px;">
-            <div class="textsettingCol1">
+            <div class="span6">
               <p class="sizelabel">16px</p>
               <p style="font-size: 16px;">serviced tightly trestle custom nosey
                 impugned gooier deeper oat charade smashed welting clopping
@@ -1139,9 +1140,8 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
                 A very big box sailed up then whizzed quickly from Japan the
                 five boxing wizards jump quickly pack my red box with five dozen
                 quality jugs</p>
-              <p>&nbsp;</p>
             </div>
-            <div class="textsettingCol2">
+            <div class="span6">
               <p class="sizelabel">13px</p>
               <p style="font-size: 13px;">serviced tightly trestle custom nosey
                 impugned gooier deeper oat charade smashed welting clopping
@@ -1198,11 +1198,14 @@ In January 2005, The Fall were the subject of The Fall: The Wonderful and Fright
                 five boxing wizards jump quickly pack my red box with five dozen
                 quality jugs</p>
       </div>
-<div>        
+<div>
+    
+    
+    <!-- Lowercases a-z -->
+    <div id="lowercases">
+        <div style="white-space: nowrap; overflow: hidden; ">
 <p class="sizelabel">14px</p>
             <p style="font-size: 14px;">
-http://n5dwi.com/resources/Morse/Words,_Alphabetical.pdf
-<br>
 aardvark
 aargh
 aaron
@@ -3854,12 +3857,13 @@ baronet
 baron's
 baroque
 </p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+    
+    
         <!-- Caps -->
         <div id="caps">
-          <div style="width: 920px;">
+          <div style="">
             <p class="sizelabel">14px</p>
             <p style="font-size: 14px;">
 Able About Account Acid Across Act Addition Adjustment Advertisement Agreement After Again Against Air All Almost Among Amount Amusement And Angle Angry Animal Answer Ant Any Apparatus Apple Approval Arch Argument Arm Army Art As At Attack Attempt Attention Attraction Authority Automatic Awake Baby Back Bad Bag Balance Ball Band Base Basin Basket Bath Be Beautiful Because Bed Bee Before Behavior Belief Bell Bent Berry Between Bird Birth Bit Bite Bitter Black Blade Blood Blow Blue Board Boat Body Boiling Bone Book Boot Bottle Box Boy Brain Brake Branch Brass Bread Breath Brick Bridge Bright Broken Brother Brown Brush Bucket Building Bulb Burn Burst Business But Butter Button By Cake Camera Canvas Card Care Carriage Cart Cat Cause Certain Chain Chalk Chance Change Cheap Cheese Chemical Chest Chief Chin Church Circle Clean Clear Clock Cloth Cloud Coal Coat Cold Collar Color Comb Come Comfort Committee Common Company Comparison Competition Complete Complex Condition Connection Conscious Control Cook Copper Copy Cord Cork Cotton Cough Country Cover Cow Crack Credit Crime Cruel Crush Cry Cup Current Curtain Curve Cushion Cut Damage Danger Dark Daughter Day Dead Dear Death Debt Decision Deep Degree Delicate Dependent Design Desire Destruction Detail Development Different Digestion Direction Dirty Discovery Discussion Disease Disgust Distance Distribution Division Do Dog Door Down Doubt Drain Drawer Dress Drink Driving Drop Dry Dust Ear Early Earth East Edge Education Effect Egg Elastic Electric End Engine Enough Equal Error Even Event Ever Every Example Exchange Existence Expansion Experience Expert Eye Face Fact Fall False Family Far Farm Fat Father Fear Feather Feeble Feeling Female Fertile Fiction Field Fight Finger Fire First Fish Fixed Flag Flame Flat Flight Floor Flower Fly Fold Food Foolish Foot For Force Fork Form Forward Fowl Frame Free Frequent Friend From Front Fruit Full Future Garden General Get Girl Give Glass Glove Go Goat Gold Good Government Grain Grass Great Green Grey/Gray Grip Group Growth Guide Gun Hair Hammer Hand Hanging Happy Harbor Hard Harmony Hat Hate Have He Head Healthy Hearing Heart Heat Help Here High History Hole Hollow Hook Hope Horn Horse Hospital Hour House How Humor Ice Idea If Ill Important Impulse In Increase Industry Ink Insect Instrument Insurance Interest Invention Iron Island Jelly Jewel Join Journey Judge Jump Keep Kettle Key Kick Kind Kiss Knee Knife Knot Knowledge Land Language Last Late Laugh Law Lead Leaf Learning Leather Left Leg Let Letter Level Library Lift Light Like Limit Line Linen Lip Liquid List Little (Less, Least) Living Lock Long Look Loose Loss Loud Love Low Machine Make Male Man Manager Map Mark Market Married Match Material Mass May Meal Measure Meat Medical Meeting Memory Metal Middle Military Milk Mind Mine Minute Mist Mixed Money Monkey Month Moon Morning Mother Motion Mountain Mouth Move Much (More, Most) Muscle Music Nail Name Narrow Nation Natural Near Necessary Neck Need Needle Nerve Net New News Night No Noise Normal North Nose Not Note Now Number Nut Observation Of Off Offer Office Oil Old On Only Open Operation Opposite Opinion Other Or Orange Order Organization Ornament Out Oven Over Owner Page Pain Paint Paper Parallel Parcel Part Past Paste Payment Peace Pen Pencil Person Physical Picture Pig Pin Pipe Place Plane Plant Plate Play Please Pleasure Plough/Plow Pocket Point Poison Polish Political Poor Porter Position Possible Pot Potato Powder Power Present Price Print Prison Private Probable Process Produce Profit Property Prose Protest Public Pull Pump Punishment Purpose Push Put Quality Question Quick Quiet Quite Rail Rain Range Rat Rate Ray Reaction Red Reading Ready Reason Receipt Record Regret Regular Relation Religion Representative Request Respect Responsible Rest Reward Rhythm Rice Right Ring River Road Rod Roll Roof Room Root Rough Round Rub Rule Run Sad Safe Sail Salt Same Sand Say Scale School Science Scissors Screw Sea Seat Second Secret Secretary See Seed Selection Self Send Seem Sense Separate Serious Servant Sex Shade Shake Shame Sharp Sheep Shelf Ship Shirt Shock Shoe Short Shut Side Sign Silk Silver Simple Sister Size Skin Skirt Sky Sleep Slip Slope Slow Small Smash Smell Smile Smoke Smooth Snake Sneeze Snow So Soap Society Sock Soft Solid Some Son Song Sort Sound South Soup Space Spade Special Sponge Spoon Spring Square Stamp Stage Star Start Statement Station Steam Stem Steel Step Stick Still Stitch Stocking Stomach Stone Stop Store Story Strange Street Stretch Sticky Stiff Straight Strong Structure Substance Sugar Suggestion Summer Support Surprise Such Sudden Sun Sweet Swim System Table Tail Take Talk Tall Taste Tax Teaching Tendency Test Than That The Then Theory There Thick Thin Thing This Thought Thread Throat Though Through Thumb Thunder Ticket Tight Tired Till Time Tin To Toe Together Tomorrow Tongue Tooth Top Touch Town Trade Train Transport Tray Tree Trick Trousers True Trouble Turn Twist Umbrella Under Unit Use Up Value Verse Very Vessel View Violent Voice Walk Wall Waiting War Warm Wash Waste Watch Water Wave Wax Way Weather Week Weight Well West Wet Wheel When Where While Whip Whistle White Who Why Wide Will Wind Window Wine Wing Winter Wire Wise With Woman Wood Wool Word Work Worm Wound Writing Wrong Xanadu Xerox Xylophone Year Yellow Yes Yesterday You Young Zanzibar Zebra Zoro Zumba</p>
@@ -3889,7 +3893,7 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
 
         <!-- All Caps -->
         <div id="allcaps">
-          <div style="width: 920px;">
+          <div style="">
             <p class="sizelabel">60px</p>
             <p style="font-size: 60px;">ARROWROOT BARLETY CHERVIL DUMPLING
               ENDINE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEEN MARJORAM
@@ -3915,7 +3919,7 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
         </div>
         <!-- Layout -->
         <div id="layout">
-          <div style="width: 920px;">
+          <div style="">
             <p class="sizelabel">Heading 60px, Subhead 36px, Body 16px</p>
             <p style="font-size: 60px;">Doubts over insect-bite treatment</p>
             <p style="font-size: 24px;">People should consider using a cold, wet
@@ -4003,151 +4007,11 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
                 detection and if we lost all hair, even the relatively invisible
                 fine hair, our detection ability goes right down.”</p>
             </div>
-            <p>&nbsp;</p>
-          </div>
         </div>
         <!-- Kerning -->
         <div id="kern">
-          <div style="width: 920px;">
-            <p class="sizelabel">12px</p>
-            <p style="font-size: 12px;"> ARROWROOT BARLETY CHERVIL DUMPLING
-              ENDINE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEEN MARJORAM
-              NECTARINE vertrag crainte screw verwalter croyant science verzicht
-              fratricide sketchy vorrede frivolité story yankee instruction take
-              zwetschge lyre treaty zypresse navette tricycle fraktur nocturne
-              typograph kraft pervertir vanity raffeln presto victory reaktion
-              prévoyant vivacity rekord priorité wayward revolte proscrire
-              efficiency tritt raviver without trotzkopf tactilité through
-              tyrann arrêt known bibel malhabile modo biegen peuple punibile
-              blind qualifier quindi damals quelle dinamica china quelque
-              analiso schaden salomon macchina schein sellier secondo lager
-              sommier singolo legion unique possibile mime unanime unico mohn
-              usuel legge nagel abonner unione puder agir punizione quälen
-              aiglon dunque huldigen allégir quando geduld alliance uomini lynx
-              tuft frogs, dolphins abduct by proxy the ever awkward klutz, dud,
-              dummkopf, jinx snubnose filmgoer, orphan sgt. renfruw grudgek
-              reyfus, md. sikh psych if halt tympany jewelry sri heh! twyer vs
-              jojo pneu fylfot alcaaba son of nonplussed halfbreed bubbly
-              playboy guggenheim daddy coccyx sgraffito effect, vacuum dirndle
-              impossible attempt to disvalue, muzzle the afghan czech czar and
-              exninja, bob bixby dvorak wood dhurrie savvy, dizzy eye aeon
-              circumcision uvula scrungy picnic luxurious special type
-              carbohydrate ovoid adzuki kumquat bomb? afterglows gold girl pygmy
-              gnome lb. ankhs acme aggroupment akmed brouhha tv wt. ujjain ms.
-              oz abacus mnemonics bhikku khaki bwana aorta embolism vivid owls
-              often kvetch otherwise, wysiwyg densfort wright you’ve absorbed
-              rhythm, put obstacle kyaks krieg kern wurst subject enmity equity
-              coquet quorum pique tzetse hepzibah sulfhydryl briefcase ajax
-              ehler kafka fjord elfship halfdressed jugful eggcup hummingbirds
-              swingdevil bagpipe legwork reproachful hunchback archknave baghdad
-              wejh rijswijk rajbansi rajput ajdir okay weekday obfuscate
-              subpoena liebknecht marcgravia ecbolic arcticward dickcissel
-              pincpinc boldface maidkin adjective adcraft adman dwarfness
-              applejack darkbrown kiln palzy always farmland flimflam unbossy
-              nonlineal stepbrother lapdog stopgap sx countdown basketball
-              beaujolais vb. flowchart aztec lazy bozo syrup tarzan annoying
-              dyke yucky hawg gagzhukz cuzco squire when hiho mayhem nietzsche
-              szasz gumdrop milk emplotment ambidextrously lacquer byway
-              ecclesiastes stubchen hobgoblins crabmill aqua hawaii blvd.
-              subquality byzantine empire debt obvious cervantes jekabzeel
-              anecdote flicflac mechanicville bedbug couldn’t i’ve it’s they’ll
-              they’d dpt. headquarter burkhardt xerxes atkins govt. ebenezer lg.
-              lhama amtrak amway fixity axmen quumbabda upjohn hrumpfAaron
-              Abraham Adam Aeneas Agfa Ahoy Aileen Akbar Alanon Americanism
-              Anglican Aorta April Fool’s Day Aqua Lung (Tm.) Arabic Ash
-              Wednesday Authorized Version Ave Maria Away Axel Ay Aztec Bhutan
-              Bill Bjorn Bk Btu. Bvart Bzonga California Cb Cd Cervantes Chicago
-              Clute City, Tx. Cmdr. Cnossus Coco Cracker State, Georgia Cs Ct.
-              Cwacker Cyrano David Debra Dharma Diane Djakarta Dm Dnepr Doris
-              Dudley Dwayne Dylan Dzerzhinsk Eames Ectomorph Eden Eerie
-              Effingham, Il. Egypt Eiffel Tower Eject Ekland Elmore Entreaty
-              Eolian Epstein Equine Erasmus Eskimo Ethiopia Europe Eva Ewan
-              Exodus Jan van Eyck Ezra Fabian February Fhara Fifi Fjord Florida
-              Fm France Fs Ft. Fury Fyn Gabriel Gc Gdynia Gehrig Ghana Gilligan
-              Karl Gjellerup Gk. Glen Gm Gnosis Gp.E. Gregory Gs Gt. Br.
-              Guinevere Gwathmey Gypsy Gzags Hebrew Hf Hg Hileah Horace Hrdlicka
-              Hsia Hts. Hubert Hwang Hai Hyacinth Hz. Iaccoca Ibsen Iceland
-              Idaho If Iggy Ihre Ijit Ike Iliad Immediate Innocent Ione Ipswitch
-              Iquarus Ireland Island It Iud Ivert Iwerks Ixnay Iy Jasper Jenks
-              Jherry Jill Jm Jn Jorge Jr. Julie Kerry Kharma Kiki Klear Koko
-              Kruse Kusack Kylie Laboe Lb. Leslie Lhihane Llama Lorrie Lt. Lucy
-              Lyle Madeira Mechanic Mg. Minnie Morrie Mr. Ms. Mt. Music My Nanny
-              Nellie Nillie Novocane Null Nyack Oak Oblique Occarina Odd Oedipus
-              Off Ogmane Ohio Oil Oj Oklahoma Olio Omni Only Oops Opera Oqu
-              Order Ostra Ottmar Out Ovum Ow Ox Oyster Oz Parade Pd. Pepe
-              Pfister Pg. Phil Pippi Pj Please Pneumonia Porridge Price Psalm
-              Pt. Purple Pv Pw Pyre Qt. Quincy Radio Rd. Red Rhea Right Rj Roche
-              Rr Rs Rt. Rural Rwanda Ryder Sacrifice Series Sgraffito Shirt
-              Sister Skeet Slow Smore Snoop Soon Special Squire Sr St. Suzy
-              Svelte Swiss Sy Szach Td Teach There Title Total Trust Tsena Tulip
-              Twice Tyler Tzean Ua Udder Ue Uf Ugh Uh Ui Uk Ul Um Unkempt Uo Up
-              Uq Ursula Use Utmost Uvula Uw Uxurious Uzßai Valerie Velour Vh
-              Vicky Volvo Vs Water Were Where With World Wt. Wulk Wyler Xavier
-              Xerox Xi Xylophone Yaboe Year Yipes Yo Ypsilant Ys Yu Zabar’s Zero
-              Zhane Zizi Zorro Zu Zy Don’t I’ll I’m I’selynx tuft frogs,
-              dolphins abduct by proxy the ever awkward klutz, dud, dummkopf,
-              jinx snubnose filmgoer, orphan sgt. renfruw grudgek reyfus, md.
-              sikh psych if halt tympany jewelry sri heh! twyer vs jojo pneu
-              fylfot alcaaba son of nonplussed halfbreed bubbly playboy
-              guggenheim daddy coccyx sgraffito effect, vacuum dirndle
-              impossible attempt to disvalue, muzzle the afghan czech czar and
-              exninja, bob bixby dvorak wood dhurrie savvy, dizzy eye aeon
-              circumcision uvula scrungy picnic luxurious special type
-              carbohydrate ovoid adzuki kumquat bomb? afterglows gold girl pygmy
-              gnome lb. ankhs acme aggroupment akmed brouhha tv wt. ujjain ms.
-              oz abacus mnemonics bhikku khaki bwana aorta embolism vivid owls
-              often kvetch otherwise, wysiwyg densfort wright you’ve absorbed
-              rhythm, put obstacle kyaks krieg kern wurst subject enmity equity
-              coquet quorum pique tzetse hepzibah sulfhydryl briefcase ajax
-              ehler kafka fjord elfship halfdressed jugful eggcup hummingbirds
-              swingdevil bagpipe legwork reproachful hunchback archknave baghdad
-              wejh rijswijk rajbansi rajput ajdir okay weekday obfuscate
-              subpoena liebknecht marcgravia ecbolic arcticward dickcissel
-              pincpinc boldface maidkin adjective adcraft adman dwarfness
-              applejack darkbrown kiln palzy always farmland flimflam unbossy
-              nonlineal stepbrother lapdog stopgap sx countdown basketball
-              beaujolais vb. flowchart aztec lazy bozo syrup tarzan annoying
-              dyke yucky hawg gagzhukz cuzco squire when hiho mayhem nietzsche
-              szasz gumdrop milk emplotment ambidextrously lacquer byway
-              ecclesiastes stubchen hobgoblins crabmill aqua hawaii blvd.
-              subquality byzantine empire debt obvious cervantes jekabzeel
-              anecdote flicflac mechanicville bedbug couldn’t i’ve it’s they’ll
-              they’d dpt. headquarter burkhardt xerxes atkins govt. ebenezer lg.
-              lhama amtrak amway fixity axmen quumbabda upjohn hrumpf Aaron
-              Abraham Adam Aeneas Agfa Ahoy Aileen Akbar Alanon Americanism
-              Anglican Aorta April Fool’s Day Aqua Lung (Tm.) Arabic Ash
-              Wednesday Authorized Version Ave Maria Away Axel Ay Aztec Bhutan
-              Bill Bjorn Bk Btu. Bvart Bzonga California Cb Cd Cervantes Chicago
-              Clute City, Tx. Cmdr. Cnossus Coco Cracker State, Georgia Cs Ct.
-              Cwacker Cyrano David Debra Dharma Diane Djakarta Dm Dnepr Doris
-              Dudley Dwayne Dylan Dzerzhinsk Eames Ectomorph Eden Eerie
-              Effingham, Il. Egypt Eiffel Tower Eject Ekland Elmore Entreaty
-              Eolian Epstein Equine Erasmus Eskimo Ethiopia Europe Eva Ewan
-              Exodus Jan van Eyck Ezra Fabian February Fhara Fifi Fjord Florida
-              Fm France Fs Ft. Fury Fyn Gabriel Gc Gdynia Gehrig Ghana Gilligan
-              Karl Gjellerup Gk. Glen Gm Gnosis Gp.E. Gregory Gs Gt. Br.
-              Guinevere Gwathmey Gypsy Gzags Hebrew Hf Hg Hileah Horace Hrdlicka
-              Hsia Hts. Hubert Hwang Hai Hyacinth Hz. Iaccoca Ibsen Iceland
-              Idaho If Iggy Ihre Ijit Ike Iliad Immediate Innocent Ione Ipswitch
-              Iquarus Ireland Island It Iud Ivert Iwerks Ixnay Iy Jasper Jenks
-              Jherry Jill Jm Jn Jorge Jr. Julie Kerry Kharma Kiki Klear Koko
-              Kruse Kusack Kylie Laboe Lb. Leslie Lhihane Llama Lorrie Lt. Lucy
-              Lyle Madeira Mechanic Mg. Minnie Morrie Mr. Ms. Mt. Music My Nanny
-              Nellie Nillie Novocane Null Nyack Oak Oblique Occarina Odd Oedipus
-              Off Ogmane Ohio Oil Oj Oklahoma Olio Omni Only Oops Opera Oqu
-              Order Ostra Ottmar Out Ovum Ow Ox Oyster Oz Parade Pd. Pepe
-              Pfister Pg. Phil Pippi Pj Please Pneumonia Porridge Price Psalm
-              Pt. Purple Pv Pw Pyre Qt. Quincy Radio Rd. Red Rhea Right Rj Roche
-              Rr Rs Rt. Rural Rwanda Ryder Sacrifice Series Sgraffito Shirt
-              Sister Skeet Slow Smore Snoop Soon Special Squire Sr St. Suzy
-              Svelte Swiss Sy Szach Td Teach There Title Total Trust Tsena Tulip
-              Twice Tyler Tzean Ua Udder Ue Uf Ugh Uh Ui Uk Ul Um Unkempt Uo Up
-              Uq Ursula Use Utmost Uvula Uw Uxurious Uzßai Valerie Velour Vh
-              Vicky Volvo Vs Water Were Where With World Wt. Wulk Wyler Xavier
-              Xerox Xi Xylophone Yaboe Year Yipes Yo Ypsilant Ys Yu Zabar’s Zero
-              Zhane Zizi Zorro Zu Zy Don’t I’ll I’m I’se</p>
-            <hr>
-            <p class="sizelabel">16px</p>
+          <div class="span5">
+                        <p class="sizelabel">16px</p>
             <p style="font-size: 16px;"> ARROWROOT BARLETY CHERVIL DUMPLING
               ENDINE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEEN MARJORAM
               NECTARINE vertrag crainte screw verwalter croyant science verzicht
@@ -4284,7 +4148,8 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
               Vicky Volvo Vs Water Were Where With World Wt. Wulk Wyler Xavier
               Xerox Xi Xylophone Yaboe Year Yipes Yo Ypsilant Ys Yu Zabar’s Zero
               Zhane Zizi Zorro Zu Zy Don’t I’ll I’m I’se</p>
-            <hr>
+              </div>
+            <div class="span5">
             <p class="sizelabel">22px</p>
             <p style="font-size: 22px;"> ARROWROOT BARLETY CHERVIL DUMPLING
               ENDINE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEEN MARJORAM
@@ -4422,64 +4287,64 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
               Vicky Volvo Vs Water Were Where With World Wt. Wulk Wyler Xavier
               Xerox Xi Xylophone Yaboe Year Yipes Yo Ypsilant Ys Yu Zabar’s Zero
               Zhane Zizi Zorro Zu Zy Don’t I’ll I’m I’se</p>
-            <hr>
-            <p class="sizelabel">22px</p>
-            <p style="font-size: 22px;">
-              AABACADAEAFAGAHAIAJAKALAMANAOAPAQARASATAUAVAWAXAYAZA<br>
-              BABBCBDBEBFBGBHBIBJBKBLBMBNBOBPBQBRBSBTBUBVBWBXBYBZB<br>
-              CACBCCDCECFCGCHCICJCKCLCMCNCOCPCQCRCSCTCUCVCWCXCYCZC<br>
-              DADBDCDDEDFDGDHDIDJDKDLDMDNDODPDQDRDSDTDUDVDWDXDYDZD<br>
-              EAEBECEDEEFEGEHEIEJEKELEMENEOEPEQERESETEUEVEWEXEYEZE<br>
-              FAFBFCFDFEFFGFHFIFJFKFLFMFNFOFPFQFRFSFTFUFVFWFXFYFZF<br>
-              GAGBGCGDGEGFGGHGIGJGKGLGMGNGOGPGQGRGSGTGUGVGWGXGYGZG<br>
-              HAHBHCHDHEHFHGHHIHJHKHLHMHNHOHPHQHRHSHTHUHVHWHXHYHZH<br>
-              IAIBICIDIEIFIGIHIIJIKILIMINIOIPIQIRISITIUIVIWIXIYIZI<br>
-              JAJBJCJDJEJFJGJHJIJJKJLJMJNJOJPJRJSJTJUJVJWJXJYJZJ<br>
-              KAKBKCKDKEKFKGKHKIKJKKLKMKNKOKPKQKRKSKTKUKVKWKXKYKZK<br>
-              LALBLCLDLELFLGLHLILJLKLLMLNLOLPLQLRLSLTLULVLWLXLYLZL<br>
-              MAMBMCMDMEMFMGMHMIMJMKMLMMNMOMPMQMRMSMTMUMVMWMXMYMZM<br>
-              NANBNCNDNENFNGNHNINJNKNLNMNNONPNQNRNSNTNUNVNWNXNYNZN<br>
-              OAOBOCODOEOFOGOHOIOJOKOLOMONOOPOQOROSOTOUOVOWOXOYOZO<br>
-              PAPBPCPDPEPFPGPHPIPJPKPLPMPNPOPPQPRPSPTPUPVPWPXPYPZP<br>
-              QAQBQCQDQEQFQGQHQIQJQKQLQMQNQOQPQQRQSQTQUQVQWQXQYQZQ<br>
-              RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRSRTRURVRWRXRYRZR<br>
-              SASBSCSDSESFSGSHSISJSKSLSMSNSOSPSQSRSSTSUSVSWSXSYSZS<br>
-              TATBTCTDTETFTGTHTITJTKTLTMTNTOTPTQTRTSTTUTVTWTXTYTZT<br>
-              UAUBUCUDUEUFUGUHUIUJUKULUMUNUOUPUQURUSUTUUVUWUXUYUZU<br>
-              VAVBVCVDVEVFVGVHVIVJVKVLVMVNVOVPVQVRVSVTVUVVWVXVYVZV<br>
-              WAWBWCWDWEWFWGWHWIWJWKWLWMWNWOWPWQWRWSWTWUWVWWXWYWZW<br>
-              XAXBXCXDXEXFXGXHXIXJXKXLXMXNXOXPXQXRXSXTXUXVXWXXYXZX<br>
-              YAYBYCYDYEYFYGYHYIYJYKYLYMYNYOYPYQYRYSYTYUYVYWYYZY<br>
-              ZAZBZCZDZEZFZGZHZIZJZKZLZMZNZOZPZQZRZSZTZUZVZWZXZYZZ<br>
-              <br>
-              aabacadaeafagahaiajakalamanaoapaqarasatauavawaxayaza<br>
-              babbcbdbebfbgbhbibjbkblbmbnbobpbqbrbsbtbubvbwbxbybzb<br>
-              cacbccdcecfcgchcicjckclcmcncocpcqcrcsctcucvcwcxcyczc<br>
-              dadbdcddedfdgdhdidjdkdldmdndodpdqdrdsdtdudvdwdxdydzd<br>
-              eaebecedeefegeheiejekelemeneoepeqereseteuevewexeyeze<br>
-              fafbfcfdfeffgfhfifjfkflfmfnfofpfqfrfsftfufvfwfxfyfzf<br>
-              gagbgcgdgegfgghgigjgkglgmgngogpgqgrgsgtgugvgwgxgygzg<br>
-              hahbhchdhehfhghhihjhkhlhmhnhohphqhrhshthuhvhwhxhyhzh<br>
-              iaibicidieifigihiijikiliminioipiqirisitiuiviwixiyizi<br>
-              jajbjcjdjejfjgjhjijjkjljmjnjojpjrjsjtjujvjwjxjyjzj<br>
-              kakbkckdkekfkgkhkikjkklkmknkokpkqkrksktkukvkwkxkykzk<br>
-              lalblcldlelflglhliljlkllmlnlolplqlrlsltlulvlwlxlylzl<br>
-              mambmcmdmemfmgmhmimjmkmlmmnmompmqmrmsmtmumvmwmxmymzm<br>
-              nanbncndnenfngnhninjnknlnmnnonpnqnrnsntnunvnwnxnynzn<br>
-              oaobocodoeofogohoiojokolomonoopoqorosotouovowoxoyozo<br>
-              papbpcpdpepfpgphpipjpkplpmpnpoppqprpsptpupvpwpxpypzp<br>
-              qaqbqcqdqeqfqgqhqiqjqkqlqmqnqoqpqqrqsqtquqvqwqxqyqzq<br>
-              rarbrcrdrerfrgrhrirjrkrlrmrnrorprqrrsrtrurvrwrxryrzr<br>
-              sasbscsdsesfsgshsisjskslsmsnsospsqsrsstsusvswsxsyszs<br>
-              tatbtctdtetftgthtitjtktltmtntotptqtrtsttutvtwtxtytzt<br>
-              uaubucudueufuguhuiujukulumunuoupuqurusutuuvuwuxuyuzu<br>
-              vavbvcvdvevfvgvhvivjvkvlvmvnvovpvqvrvsvtvuvvwvxvyvzv<br>
-              wawbwcwdwewfwgwhwiwjwkwlwmwnwowpwqwrwswtwuwvwwxwywzw<br>
-              xaxbxcxdxexfxgxhxixjxkxlxmxnxoxpxqxrxsxtxuxvxwxxyxzx<br>
-              yaybycydyeyfygyhyiyjykylymynyoypyqyrysytyuyvywyyzy<br>
-              zazbzczdzezfzgzhzizjzkzlzmznzozpzqzrzsztzuzvzwzxzyzz<br>
-              <br>
-              Aar Abo Act Adj Aer Aft Aga Ahe Aie Aji Ake Alm Amo Ano Aoa App
+            </div>
+            <div class="span10">
+                <p class="sizelabel">22px</p>
+                <p style="font-size: 22px;">
+                AABACADAEAFAGAHAIAJAKALAMANAOAPAQARASATAUAVAWAXAYAZA<br>
+                BABBCBDBEBFBGBHBIBJBKBLBMBNBOBPBQBRBSBTBUBVBWBXBYBZB<br>
+                CACBCCDCECFCGCHCICJCKCLCMCNCOCPCQCRCSCTCUCVCWCXCYCZC<br>
+                DADBDCDDEDFDGDHDIDJDKDLDMDNDODPDQDRDSDTDUDVDWDXDYDZD<br>
+                EAEBECEDEEFEGEHEIEJEKELEMENEOEPEQERESETEUEVEWEXEYEZE<br>
+                FAFBFCFDFEFFGFHFIFJFKFLFMFNFOFPFQFRFSFTFUFVFWFXFYFZF<br>
+                GAGBGCGDGEGFGGHGIGJGKGLGMGNGOGPGQGRGSGTGUGVGWGXGYGZG<br>
+                HAHBHCHDHEHFHGHHIHJHKHLHMHNHOHPHQHRHSHTHUHVHWHXHYHZH<br>
+                IAIBICIDIEIFIGIHIIJIKILIMINIOIPIQIRISITIUIVIWIXIYIZI<br>
+                JAJBJCJDJEJFJGJHJIJJKJLJMJNJOJPJRJSJTJUJVJWJXJYJZJ<br>
+                KAKBKCKDKEKFKGKHKIKJKKLKMKNKOKPKQKRKSKTKUKVKWKXKYKZK<br>
+                LALBLCLDLELFLGLHLILJLKLLMLNLOLPLQLRLSLTLULVLWLXLYLZL<br>
+                MAMBMCMDMEMFMGMHMIMJMKMLMMNMOMPMQMRMSMTMUMVMWMXMYMZM<br>
+                NANBNCNDNENFNGNHNINJNKNLNMNNONPNQNRNSNTNUNVNWNXNYNZN<br>
+                OAOBOCODOEOFOGOHOIOJOKOLOMONOOPOQOROSOTOUOVOWOXOYOZO<br>
+                PAPBPCPDPEPFPGPHPIPJPKPLPMPNPOPPQPRPSPTPUPVPWPXPYPZP<br>
+                QAQBQCQDQEQFQGQHQIQJQKQLQMQNQOQPQQRQSQTQUQVQWQXQYQZQ<br>
+                RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRSRTRURVRWRXRYRZR<br>
+                SASBSCSDSESFSGSHSISJSKSLSMSNSOSPSQSRSSTSUSVSWSXSYSZS<br>
+                TATBTCTDTETFTGTHTITJTKTLTMTNTOTPTQTRTSTTUTVTWTXTYTZT<br>
+                UAUBUCUDUEUFUGUHUIUJUKULUMUNUOUPUQURUSUTUUVUWUXUYUZU<br>
+                VAVBVCVDVEVFVGVHVIVJVKVLVMVNVOVPVQVRVSVTVUVVWVXVYVZV<br>
+                WAWBWCWDWEWFWGWHWIWJWKWLWMWNWOWPWQWRWSWTWUWVWWXWYWZW<br>
+                XAXBXCXDXEXFXGXHXIXJXKXLXMXNXOXPXQXRXSXTXUXVXWXXYXZX<br>
+                YAYBYCYDYEYFYGYHYIYJYKYLYMYNYOYPYQYRYSYTYUYVYWYYZY<br>
+                ZAZBZCZDZEZFZGZHZIZJZKZLZMZNZOZPZQZRZSZTZUZVZWZXZYZZ<br>
+                <br>
+                aabacadaeafagahaiajakalamanaoapaqarasatauavawaxayaza<br>
+                babbcbdbebfbgbhbibjbkblbmbnbobpbqbrbsbtbubvbwbxbybzb<br>
+                cacbccdcecfcgchcicjckclcmcncocpcqcrcsctcucvcwcxcyczc<br>
+                dadbdcddedfdgdhdidjdkdldmdndodpdqdrdsdtdudvdwdxdydzd<br>
+                eaebecedeefegeheiejekelemeneoepeqereseteuevewexeyeze<br>
+                fafbfcfdfeffgfhfifjfkflfmfnfofpfqfrfsftfufvfwfxfyfzf<br>
+                gagbgcgdgegfgghgigjgkglgmgngogpgqgrgsgtgugvgwgxgygzg<br>
+                hahbhchdhehfhghhihjhkhlhmhnhohphqhrhshthuhvhwhxhyhzh<br>
+                iaibicidieifigihiijikiliminioipiqirisitiuiviwixiyizi<br>
+                jajbjcjdjejfjgjhjijjkjljmjnjojpjrjsjtjujvjwjxjyjzj<br>
+                kakbkckdkekfkgkhkikjkklkmknkokpkqkrksktkukvkwkxkykzk<br>
+                lalblcldlelflglhliljlkllmlnlolplqlrlsltlulvlwlxlylzl<br>
+                mambmcmdmemfmgmhmimjmkmlmmnmompmqmrmsmtmumvmwmxmymzm<br>
+                nanbncndnenfngnhninjnknlnmnnonpnqnrnsntnunvnwnxnynzn<br>
+                oaobocodoeofogohoiojokolomonoopoqorosotouovowoxoyozo<br>
+                papbpcpdpepfpgphpipjpkplpmpnpoppqprpsptpupvpwpxpypzp<br>
+                qaqbqcqdqeqfqgqhqiqjqkqlqmqnqoqpqqrqsqtquqvqwqxqyqzq<br>
+                rarbrcrdrerfrgrhrirjrkrlrmrnrorprqrrsrtrurvrwrxryrzr<br>
+                sasbscsdsesfsgshsisjskslsmsnsospsqsrsstsusvswsxsyszs<br>
+                tatbtctdtetftgthtitjtktltmtntotptqtrtsttutvtwtxtytzt<br>
+                uaubucudueufuguhuiujukulumunuoupuqurusutuuvuwuxuyuzu<br>
+                vavbvcvdvevfvgvhvivjvkvlvmvnvovpvqvrvsvtvuvvwvxvyvzv<br>
+                wawbwcwdwewfwgwhwiwjwkwlwmwnwowpwqwrwswtwuwvwwxwywzw<br>
+                xaxbxcxdxexfxgxhxixjxkxlxmxnxoxpxqxrxsxtxuxvxwxxyxzx<br>
+                yaybycydyeyfygyhyiyjykylymynyoypyqyrysytyuyvywyyzy<br>
+                zazbzczdzezfzgzhzizjzkzlzmznzozpzqzrzsztzuzvzwzxzyzz<br>
+                          Aar Abo Act Adj Aer Aft Aga Ahe Aie Aji Ake Alm Amo Ano Aoa App
               Aqu Art Ass Att Aug Ave Awa Axe Aye Azo Bal Bbn Bcc Bdj Ber Bfd
               Bga Bhu Bie Bji Bkl Bli Bmo Bni Boa Bpi Bqu Brt Bss Btl But Bve
               Bwa Bxl Bye Bzo Cal Cbn Ccn Cdj Cer Cfi Cga Che Cie Cjn Ckl Cle
@@ -4602,7 +4467,7 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
         </div>
         <!-- Latin -->
         <div id="latin">
-          <div style="width: 920px;">
+          <div style="">
             <p class="sizelabel">Diacritics for all 105 Latin Languages</p>
             <p style="font-size: 26px;">ÀÁÂÃÄÅĀĂĄǺÆǼ ĆÇĈĊČĎ ĐÐḌ Ǳ ǲ Ǆ ǅ
               ÈÉÊËĒĔĖĘẼĚẸ Ə ĜĞĠĢ ĤĦḤ ĬÌÍÎÏİĨĪĮỊ Ĳ Ĵ Ķ ĹĻĽĿŁ Ǉ ǈ ÑŃŅŇṄ Ŋ Ǌ ǋ
@@ -4727,9 +4592,8 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
         </div>
         
                    <!-- Extended-Latin -->
-                                    <div id="more"><div style="width: 920px;">
- <!-- 12 px -->
-                                      <hr>12 px<br>
+                                    <div id="more">
+<div class="span5">
                                         <p class="sizelabel">Albanian</p>
                                         <p style="font-size: 12px;">Mbasi njohja
                                           e dinjitetit të lindur të të drejtave
@@ -5114,7 +4978,8 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
                                           menneskerettighetene og de
                                           grunnleggende friheter blir alminnelig
                                           respektert og overholdt, da en allmenn</p>
-                                        <p>&nbsp;</p>
+     </div>
+                                        <div class="span6">
                                         <p class="sizelabel">Polish (Polski)</p>
                                         <p style="font-size: 12px;">Zważywszy,
                                           że uznanie przyrodzonej godności oraz
@@ -5430,22 +5295,15 @@ Able About Account Acid Across Act Addition Adjustment Advertisement Agreement A
                                           oassi gáibidii gielladási man mun in
                                           hálddašan ja nu Álbmotskuvlaráđđi
                                           dohkkehii mieldečálli.</p>
-</div>
-                                    </div>
+</div></div>
+                                   
                                     <!-- PIE -->
                                         <section id="pie">
-                                          <p>Font Testing Page by Pablo
-                                            Impallari (impallari.com) and Pablo
-                                            Cosgaya (omnibus-type.com).</p>
-                                          <p>Based on Fontdrag (fontdragr.com)
-                                            and Dave Crossland's FontTest.
-                                            Kerning string by James Montalbano
-                                            (terminaldesign.com). Pangrams from
-                                            Wikipedia. International texts by
-                                            Eduardo Tunni (tipo.net.ar)</p>
+                                          <p>This Font Testing Page by is Based on Fontdragr (fontdragr.com)</p>
                                         </section>
           </div>                            
     </section>
+              </div></div>
       <script src="http://code.jquery.com/jquery.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
   </body>
