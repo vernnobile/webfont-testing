@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Font Testing Page (Requires Firefox 3.6+/Chrome 13+)</title>
+    <style type="text/css">
+p {
+	font-style: normal;
+	font-weight: 200;
+    format('truetype');
+}
+
+
+
+.rl {
+    font-size: 20px;
+    font-weight: 1600;
+    font-style: bold;
+    font-style: normal;
+    color: #990000;
+    margin-top:1em;
+    font-family: "Verdana" !important;
+    local ("Verdana")
+    src: url("Verdana.ttf") !important;
+}
+
+.reg, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r16, .r18, .r20, .r22, .r24 {
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.r6 { font-size: 6px; }
+
+.r7 { font-size: 7px; }
+
+.r8 { font-size: 8px; }
+
+.r9 { font-size: 9px; }
+
+.r10 { font-size: 10px; }
+
+.r11 { font-size: 11px; }
+
+.r12 { font-size: 12px; }
+
+.r13 { font-size: 13px; }
+
+.r14 { font-size: 14px; }
+
+.r16 { font-size: 16px; }
+
+.r18 { font-size: 18px; }
+
+.r20 { font-size: 20px; }
+
+.r22 { font-size: 22px; }
+
+.r24 { font-size: 24px; }
+
+
+
+
+.smcp {
+	text-transform: lowercase;
+	-moz-font-feature-settings:'smcp=1';
+}
+
+
+body { background: white; color:#444444;}
+section { display: block; float: left; margin: 0; width: 100%; }
+
+  #flypage_spec ul {
+  list-style:none;
+  margin:0;
+}
+
+ul, ol {
+  margin:20px 0 20px 20px;
+}
+      
+ #flypage_spec ul li {
+  border-bottom-color:#303030;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  padding:7px 10px;
+        color:#737373;
+font-size:14px;
+}
+
+
+
+ header { height:100px;background-color: #586E85; color:#fff; }
+
+#top { width: 100%;}
+header { background-color: #86AECE; color:#fff; }
+
+#fonts { margin: 0;  padding: 0; background: #eee; position: fixed; left: 28px; top: 8px; }
+
+#fonts li { display: inline;  list-style: none; cursor: pointer; margin: 0 0.5em; }
+#fonts li span { margin: 2em 0; }
+
+#custom { margin: 0; padding: 0; }
+#custom p { margin: 0; padding: 0; }
+#custom p.sizelabel {  color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 10px; line-height: 10px; font-style: normal; }
+
+
+div.tabs > div { padding: 20px; }
+div.tabs > div h2 { margin-top: 0; }
+
+#pie {
+	color: #666; 
+	font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; 
+	font-size: 10px; 
+	line-height: 10px; 
+	font-style: normal;
+	margin: 0;
+	padding: 20px;
+}
+      
+</style> <script type="text/javascript" src="js/prettify.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all">
+    <link type="text/css" href="css/layout.css" rel="stylesheet">
+    <script src="jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="fontdrag.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+// Tabs
+$(function () {
+    var tabContainers = $('div.tabs > div');
+    
+    $('div.tabs ul.nav-tabs a').click(function () {
+        tabContainers.hide().filter(this.hash).show();
+        
+        $('div.tabs ul.nav-tabs a').removeClass('selected');
+        $(this).addClass('selected');
+        
+        return false;
+    }).filter(':first').click();
+});
+</script> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+  </head>
+  <body spellcheck="false">
+    <div class="row">
+          <div class="span12">
+      <!-- HEADER STARTS -->
+      <section id="top">
+        <header>
+          <div class="" style="padding:25px;width:100;float:left"><img style="height:50px"
+              src="images/nt_logo.png"></div>
+          <p style="padding:30px 0 0 0; font-size:2em;">drag fonts here for
+            testing | truetype or opentype</p>
+        </header>
+        <ul id="fonts">
+        </ul>
+      </section>
+    </div>
+    <!-- HEADER ENDS -->
+    <!-- SPECIMEN STARTS -->
+
+      <div id="custom">
+        <div class="tabs">
+          <!-- MENU STARTS -->
+          <ul class="nav nav-tabs">
+            <li><a href="#headlines">Headlines</a></li>
+            <li><a href="#EMheadlines">EM Headlines</a></li>
+            <li><a href="#text">Text</a></li>
+            <li><a href="#adhesion">Adhesion</a></li>
+            <li><a href="#hamburgefonstiv">Hamburgefonstiv</a></li>
+            <li><a href="#wizards">Wizards</a></li>
+            <li><a href="#caps">Caps</a></li>
+            <li><a href="#allcaps">All Caps</a></li>
+            <li><a href="#layout">Layout</a></li>
+            <li><a href="#kern">Kern</a></li>
+            <li><a href="#lowercase">Lowercase Latin</a></li>
+          </ul>
+          <ul class="nav nav-tabs">
+            <li><a href="#more">Extended Latin</a></li>
+            <li><a href="#Cyrillic1">Cyrillic Sentence Case</a></li>
+            <li><a href="#Cyrillic2">Cyrillic Uppercase</a></li>
+            <li><a href="#Cyrillic3">Cyrillic Lowercase</a></li>
+            <li><a href="#colours">Colours</a></li>
+          </ul>
+        </div>
+          <!-- MENU ENDS -->
+          <!-- Cyrillic Sentence Case -->
+          <div id="Cyrillic1">
+            <div style="overflow: hidden; ">
+              <p class="sizelabel">21px</p>
+              <p style="font-size: 21px;">??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;">??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">14px</p>
+              <p style="font-size: 14px;">??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">12px</p>
+              <p style="font-size: 12px;">??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">10px</p>
+              <p style="font-size: 10px;">??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+            </div>
+          </div>
+          <!-- Cyrillic UpperCase -->
+          <div id="Cyrillic2">
+            <div style="overflow: hidden; ">
+              <p class="sizelabel">21px</p>
+              <p style="font-size: 21px;"> ??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;"> ??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+            </div>
+          </div>
+          <!-- Cyrillic LowerCase -->
+          <div id="Cyrillic3">
+            <div style="overflow: hidden; ">
+              <p class="sizelabel">21px</p>
+              <p style="font-size: 21px;"> ??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;"> ??? ?????????? ????? ?????? ???? ??
+                ?????, ?????? ???????????? ????? ??????????? ??-??????. ???
+                ????????? ? ???? ?????????. ???? ??????, ??? ??? ??? ? ????? ?
+                ?????? ? ?? ???? ????????????-????????????, ? ???????? ????, ???
+                ?? ????? ???? ? ??? ? ????? ????. ????????? ??? ???????????? ???
+                ?????? ???? ? ?????????? ????????????? ? ?????? ?????????, ?
+                ????? ??????? ?????, ? ???????????. ??? ????? ????? ? ?????????
+                ???????????, ??? ??? ?????? ? ?? ???????????? ? ??? ?? ??????
+                ????????? ????? ???????? ?????????? ???? ????? ??????? ?????
+                ?????, ??? ???, ????? ????? ? ????????? ?????????. ???? ??
+                ???????? ?? ????? ??????, ???? ?????? ???? ?? ???? ????. ????
+                ?????? ?? ????? ????, ??? ??????????; ?????????? ??????????? ?
+                ????????? ? ???????? ??????? ????????????, ????? ????????? ??
+                ????? ?????; ????? ???? ????? ?? ?????, ?? ????? ?????? ?????;
+                ?????? ??????? ? ????? ??????? ???????. ?? ?????? ???? ?????
+                ????? ????? ?????? ???????? ????????? ? ?????, ??? ??? ????? ?
+                ?????, ? ? ??????? ???, ?? ???? ? ?????? ????? ????, ?????????
+                ?? ? ??????? ????, ? ? ????? ????????, ?? ????????? ??????. ??
+                ???????? ???? ??????, ?????????? ???? ?? ???????? ??????, ??? ??
+                ????? ????? ??????? ???????, ? ?????? ??????? ?????? ?????
+                ??????? ? ???????? ? ??? ?????; ?? ????? ???????, ??? ?? ????? ?
+                ?????? ?????.</p>
+            </div>
+          </div>
+          <!-- Headlines -->
+          <div id="headlines">
+            <div style="white-space: nowrap; overflow: hidden;">
+              <p class="sizelabel">72px</p>
+              <p style="font-size: 72px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">60px</p>
+              <p style="font-size: 60px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">58px</p>
+              <p style="font-size: 58px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">56px</p>
+              <p style="font-size: 56px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">54px</p>
+              <p style="font-size: 54px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">52px</p>
+              <p style="font-size: 52px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">50px</p>
+              <p style="font-size: 50px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">49px</p>
+              <p style="font-size: 49px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">48px</p>
+              <p style="font-size: 48px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">47px</p>
+              <p style="font-size: 47px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">46px</p>
+              <p style="font-size: 46px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">45px</p>
+              <p style="font-size: 45px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">44px</p>
+              <p style="font-size: 44px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">43px</p>
+              <p style="font-size: 43px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">42px</p>
+              <p style="font-size: 42px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">41px</p>
+              <p style="font-size: 41px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">40px</p>
+              <p style="font-size: 40px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">39px</p>
+              <p style="font-size: 39px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">38px</p>
+              <p style="font-size: 38px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">37px</p>
+              <p style="font-size: 37px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">36px</p>
+              <p style="font-size: 36px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">30px</p>
+              <p style="font-size: 30px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">29px</p>
+              <p style="font-size: 29px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">28px</p>
+              <p style="font-size: 28px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">27px</p>
+              <p style="font-size: 27px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">26px</p>
+              <p style="font-size: 26px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">25px</p>
+              <p style="font-size: 25px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">24px</p>
+              <p style="font-size: 24px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">23px</p>
+              <p style="font-size: 23px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">22px</p>
+              <p style="font-size: 22px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">21px</p>
+              <p style="font-size: 21px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">20px</p>
+              <p style="font-size: 20px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">19px</p>
+              <p style="font-size: 19px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">18px</p>
+              <p style="font-size: 18px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">17px</p>
+              <p style="font-size: 17px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">15px</p>
+              <p style="font-size: 15px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">14px</p>
+              <p style="font-size: 14px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">13px</p>
+              <p style="font-size: 13px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">12px</p>
+              <p style="font-size: 12px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">11px</p>
+              <p style="font-size: 11px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+              <p class="sizelabel">10px</p>
+              <p style="font-size: 10px;">Grumpy wizards make toxic brew for the
+                evil Queen and Jack. A quick movement of the enemy will
+                jeopardize six gunboats. The job of waxing linoleum frequently
+                peeves chintzy kids. My girl wove six dozen plaid jackets before
+                she quit. Twelve ziggurats quickly jumped a finch box.</p>
+            </div>
+          </div>
+          <!-- EM Headlines -->
+          <div id="EMheadlines">
+            <div style="white-space: nowrap; overflow: hidden; ">
+              <p class="sizelabel">5em</p>
+              <p style="font-size: 5em;"> Capitalism pursuing aftershave creates
+                a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">4.5em</p>
+              <p style="font-size: 4.5em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">4em</p>
+              <p style="font-size: 4em;"> Capitalism pursuing aftershave creates
+                a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">3.5em</p>
+              <p style="font-size: 3.5em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">3em</p>
+              <p style="font-size: 3em;"> Capitalism pursuing aftershave creates
+                a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">2.5em</p>
+              <p style="font-size: 2.5em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">2em</p>
+              <p style="font-size: 2em;"> Capitalism pursuing aftershave creates
+                a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.9em</p>
+              <p style="font-size: 1.9em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.8em</p>
+              <p style="font-size: 1.8em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.7em</p>
+              <p style="font-size: 1.7em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.6em</p>
+              <p style="font-size: 1.6em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.5em</p>
+              <p style="font-size: 1.5em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.4em</p>
+              <p style="font-size: 1.4em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.3em</p>
+              <p style="font-size: 1.3em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.2em</p>
+              <p style="font-size: 1.2em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1.1em</p>
+              <p style="font-size: 1.1em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">1em</p>
+              <p style="font-size: 1em;"> Capitalism pursuing aftershave creates
+                a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">0.9em</p>
+              <p style="font-size: 0.9em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">0.8em</p>
+              <p style="font-size: 0.8em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">0.7em</p>
+              <p style="font-size: 0.7em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">0.6em</p>
+              <p style="font-size: 0.6em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+              <p class="sizelabel">0.5em</p>
+              <p style="font-size: 0.5em;"> Capitalism pursuing aftershave
+                creates a twisted agency for quarterdecks out for destruction
+                personifies the cosmonaut sphinx dovetailing with interminable
+                knockwurst </p>
+            </div>
+          </div>
+          <!-- End of em Headlines -->
+          <!-- COLOURS -->
+          <div id="colours">
+            <div style="white-space: nowrap; overflow: hidden; ">
+              <p style="font-size:34pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA
+                | YUKON | GERONIMO | XRAYSPEX</p>
+              <p style="font-size:28pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA
+                | YUKON | GERONIMO | XRAYSPEX</p>
+              <p style="font-size:21pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA
+                | YUKON | GERONIMO | XRAYSPEX</p>
+              <p style="font-size:16pt;line-height:1.3em;text-shadow:0px 0px 14px rgb(34, 34, 34);">MOTOROLA
+                | YUKON | GERONIMO | XRAYSPEX</p>
+              <div class="colorBox greenWhite"> <span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox brownWhite"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox blueBrown"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox paleDark"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox darkPale"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox whiteRed"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+              <div class="colorBox redWhite"><span style="font-size: 2em;">STEPSON
+                  REVOLUTION THRICE VIDEOED</span><br>
+                <span style="font-size: 1.1em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction</span> <br>
+                <span style="font-size: 0.7em;">aftershave creates a twisted
+                  agency for quarterdecks out for destruction. Callouses
+                  expressible besiege ingress exacerbate glitterings.</span></div>
+            </div>
+          </div>
+          <!-- End of COLOURS -->
+          <!-- Text -->
+          <div id="text" style="">
+            <div class="span5">
+              <p class="sizelabel">20px</p>
+              <p style="font-size: 20px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011. 01234567890 </p>
+              <p class="sizelabel">19px</p>
+              <p style="font-size: 19px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">18px</p>
+              <p style="font-size: 18px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+            </div>
+            <div class="span7">
+              <p class="sizelabel">17px</p>
+              <p style="font-size: 17px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">15px</p>
+              <p style="font-size: 15px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">14px</p>
+              <p style="font-size: 14px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">13px</p>
+              <p style="font-size: 13px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">12px</p>
+              <p style="font-size: 12px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">11px</p>
+              <p style="font-size: 11px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+              <p class="sizelabel">10px</p>
+              <p style="font-size: 10px;">He formed The Fall (named after the
+                novel by Camus) with friends after dropping out of college at
+                the age of 19. He gave up his job at Salford docks shortly after
+                to devote his full energies to the Fall, and has continued to do
+                so ever since. Smith married Chicagoan guitarist (and Fall band
+                member, 1983?89, 1994?96) Brix Smith on 19 July 1983, though
+                they divorced in 1989. He has since remarried twice; his second
+                wife was Saffron Prior who used to work for The Fall's fan club.
+                He married his present wife, Eleni (sometimes called Elenor or
+                Elena) Poulou, in 2001, and she joined The Fall in September
+                2002. When British DJ and Fall champion John Peel died in 2004,
+                Smith made a notorious appearance on the BBC's Newsnight
+                show.[3] Regarded by many as a bewildering performance, Smith
+                has made his appreciation for Peel clear in several subsequent
+                interviews. Nevertheless, the two only met a handful of times.
+                Though he broke his hip while promoting the album The Real New
+                Fall LP (Formerly Country on the Click) in 2004, Smith refused
+                to cancel an upcoming American tour, instead choosing to perform
+                in a wheelchair. Unfortunately the pain and medication caused a
+                number of dates to be cancelled. In January 2005, The Fall were
+                the subject of The Fall: The Wonderful and Frightening World of
+                Mark E. Smith, a BBC Four television documentary. The following
+                August, Smith received the "Contribution to Music" award at the
+                Diesel-U-Music Awards. Smith's autobiography, Renegade: The
+                Gospel According to Mark E. Smith, recorded with
+                Manchester-based writer Austin Collings, was published by Viking
+                Books in April 2008. The latest studio album by The Fall, Ersatz
+                GB, was released on 14 November 2011 01234567890 </p>
+            </div>
+          </div>
+          <!-- End of Text -->
+          <!-- adhesion -->
+          <div id="adhesion">
+            <div style="white-space: nowrap; overflow: hidden; ">
+              <div class="span6">
+                <p class="sizelabel">72px</p>
+                <p style="font-size: 72px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">60px</p>
+                <p style="font-size: 60px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">48px</p>
+                <p style="font-size: 48px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">36px</p>
+                <p style="font-size: 36px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">30px</p>
+                <p style="font-size: 30px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">24px</p>
+                <p style="font-size: 24px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+                <p class="sizelabel">18px</p>
+                <p style="font-size: 18px;">adhesion donnishness indianians
+                  deaden on ode so sheenie died dashed dens seaside easines
+                  nonseasoned seen hindi said seines sadnesses deaden
+                  donnishness dissensions dead</p>
+              </div>
+              <div class="span6">
+                <p class="sizelabel">16px</p>
+                <p style="font-size: 16px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+                <p class="sizelabel">15px</p>
+                <p style="font-size: 15px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+                <p class="sizelabel">14px</p>
+                <p style="font-size: 14px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+              </div>
+              <div class="span6">
+                <p class="sizelabel">13px</p>
+                <p style="font-size: 13px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+                <p class="sizelabel">12px</p>
+                <p style="font-size: 12px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+                <p class="sizelabel">11px</p>
+                <p style="font-size: 11px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+                <p class="sizelabel">10px</p>
+                <p style="font-size: 10px;">dined shoon hooded ahead shined
+                  hashed dinned soon nod nine sane inned ani session doe node
+                  idea side indeed aide anise hose noose noshed inside hid aeon
+                  inane none hoed nosed diseased handed noise haded sanded one
+                  hie deeded shine honed disdained hen ash said hah onion sodded
+                  donned and aha dine disease deed adenoid hoodooed deaned end
+                  denied anon iodine nosh shooed deadened sided addenda did
+                  aniseed sand hied nodded nose shoeshine hashish hissed done
+                  seed noon sensed sinned needed send nooned odd disdain shinned
+                  anion had shied</p>
+              </div>
+            </div>
+          </div>
+          <!-- hamburgefonstiv -->
+          <div id="hamburgefonstiv">
+            <div style="white-space: nowrap; overflow: hidden; ">
+              <div class="span6">
+                <p class="sizelabel">72px</p>
+                <p style="font-size: 72px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">60px</p>
+                <p style="font-size: 60px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">48px</p>
+                <p style="font-size: 48px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">36px</p>
+                <p style="font-size: 36px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">30px</p>
+                <p style="font-size: 30px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">24px</p>
+                <p style="font-size: 24px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+                <p class="sizelabel">18px</p>
+                <p style="font-size: 18px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt</p>
+              </div>
+              <div class="span6">
+                <p class="sizelabel">16px</p>
+                <p style="font-size: 16px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+                <p class="sizelabel">15px</p>
+                <p style="font-size: 15px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+                <p class="sizelabel">14px</p>
+                <p style="font-size: 14px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+              </div>
+              <div class="span6">
+                <p class="sizelabel">13px</p>
+                <p style="font-size: 13px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+                <p class="sizelabel">12px</p>
+                <p style="font-size: 12px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+                <p class="sizelabel">11px</p>
+                <p style="font-size: 11px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+                <p class="sizelabel">10px</p>
+                <p style="font-size: 10px;">fortieth boring trait favoring
+                  barrage referring thrusting tannest embargo sausage gaining
+                  astutest augur hibernate variant hearse beggaring foresee
+                  eagerer hearten ensnaring tufting interstate meager veneration
+                  stigma feminine tabbing noising trimming throbbing ransoming
+                  stiffen oaring fishing rehire overbore bonniest ravishment
+                  teensiest mintier shriven unforeseen overrate surgeon smarter
+                  submarine revenging assuaging masher amnesia insentient
+                  rehashing fresher buttering sorghum thine sitter month serer
+                  minting variate torsion gaunt berthing goofiest sober
+                  informing sourer tonight neigh iratest torte situate rheumier
+                  antagonist serening motion guise unseeing masseuse</p>
+              </div>
+            </div>
+          </div>
+          <!-- WIZARDS -->
+          <div id="wizards">
+            <div style="white-space: nowrap; overflow: hidden;">
+              <p class="sizelabel">72px</p>
+              <p style="font-size: 72px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">60px</p>
+              <p style="font-size: 60px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">48px</p>
+              <p style="font-size: 48px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">36px</p>
+              <p style="font-size: 36px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">30px</p>
+              <p style="font-size: 30px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">24px</p>
+              <p style="font-size: 24px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">18px</p>
+              <p style="font-size: 18px;">the five boxing wizards jump quickly
+                pack my red box with five dozen quality jugs a very big box
+                sailed up then whizzed quickly from japan</p>
+              <p class="sizelabel">16px</p>
+              <p style="font-size: 16px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">15px</p>
+              <p style="font-size: 15px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">14px</p>
+              <p style="font-size: 14px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">13px</p>
+              <p style="font-size: 13px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">12px</p>
+              <p style="font-size: 12px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">11px</p>
+              <p style="font-size: 11px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+              <p class="sizelabel">10px</p>
+              <p style="font-size: 10px;">serviced tightly trestle custom nosey
+                impugned gooier deeper oat charade smashed welting clopping
+                fondly discard welfare gaudy mission shoddily mooed knelling
+                glance golfed trope togae knocked vulgarly gigabyte curbing
+                snowball outback stepped marmot clayier coltish descry gratify
+                root freedom puree urgency moist careered journal oracle felony
+                marble salary readying besiege twitched ranching snoozing disk
+                mister warbling outwit schism sudsiest street gondola blushing
+                pennon smarted jiving sty rocker griping rocketry dieing tarring
+                A very big box sailed up then whizzed quickly from Japan the
+                five boxing wizards jump quickly pack my red box with five dozen
+                quality jugs</p>
+            </div>
+            <div>
+              <!-- Lowercases -->
+              <div id="lowercase">
+                <div style="white-space: nowrap; overflow: hidden;">
+                  <p style="font-size: 14px;">lowercase</p>
+                </div>
+              </div>
+              <!-- Caps -->
+              <div id="caps">
+                <div style="white-space: nowrap; overflow: hidden;">
+                  <p style="font-size: 14px;">CAPS</p>
+                </div>
+              </div>
+              <!-- All Caps -->
+              <div id="allcaps">
+                <div style="white-space: nowrap; overflow: hidden;">
+                  <p style="font-size: 60px;">ALL CAPS</p>
+                </div>
+              </div>
+              <!-- Layout -->
+              <div id="layout">
+                <div style="white-space: nowrap; overflow: hidden;">
+                  <p style="font-size: 60px;">layout</p>
+                </div>
+              </div>
+              <!-- Kerning -->
+              <div id="kern">
+                <div class="span5">
+                  <p style="font-size: 16px;">Kerning Pairs</p>
+                </div>
+              </div>
+              <!-- Latin -->
+              <div id="latin">
+                <div style="white-space: nowrap; overflow: hidden;">
+                  <p style="font-size: 26px;">diacritics latin</p>
+                </div>
+              </div>
+              <!-- Extended-Latin -->
+              <div id="more">
+                <div class="span5">
+                  <p style="font-size: 12px;">Extended Latin</p>
+                </div>
+              </div>
+              <!-- PIE -->
+              <section id="pie">
+                <p>This Font Testing Page by is Based on Fontdragr
+                  (fontdragr.com)</p>
+              </section>
+              <!-- END PIE -->
+            
+            </div>
+                </div>
+
+
+      </div>      
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
