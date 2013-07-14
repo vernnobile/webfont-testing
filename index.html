@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Font Testing Page (Requires Firefox 3.6+/Chrome 13+)</title>
             <style type="text/css">
+                
                 p {
                     font-style: normal;
                     font-weight: 200;
@@ -106,8 +107,9 @@
                 
                 #custom { margin: 0; padding: 0; }
                 #custom p { margin: 0; padding: 0; }
-                #custom p.sizelabel {  color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 10px; line-height: 10px; font-style: normal; }
+                #custom p.sizelabel {  padding:21px 0 5px ;color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 10px; line-height: 10px; font-style: normal; }
                 
+                 #custom p.notelabel {padding:5px 0 21px ;color: #666;  font-family: "Lucida Grande","Lucida Sans Unicode", arial, sans-serif !important; font-size: 12px; line-height: 1.2em; font-style: normal; }
                 
                 div.tabs > div { padding: 20px; }
                 div.tabs > div h2 { margin-top: 0; }
@@ -187,8 +189,10 @@
                 }
                 
                 
-                
-                </style> <script type="text/javascript" src="js/prettify.js"></script>
+                </style>
+            
+            <link type="text/css" href="css/newtype.css" rel="stylesheet">
+                <script type="text/javascript" src="js/prettify.js"></script>
             <script type="text/javascript" src="js/kickstart.js"></script>
             <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all">
                 <link type="text/css" href="css/layout.css" rel="stylesheet">
@@ -223,7 +227,7 @@
             <section id="top">
                 <header>
                     <div class="" style="padding:25px;width:100;float:left"><img style="height:50px" src="images/nt_logo.png"/></div>
-                    <p style="padding:30px 0 0 0; font-size:2em;">drag fonts here for testing | truetype or opentype</p>
+                    <p style="padding:30px 0 0 0; font-size:2em;">drag fonts here for testing | truetype / opentype / WOFF</p>
                     
                     
                 </header>
@@ -246,15 +250,19 @@
                             <li><a href="#wizards">Wizards</a></li>
                             <li><a href="#hyphens">Hyphens+</a></li>
                             <li><a href="#quotes">Quotes+</a></li>
+                            <li><a href="#brackets">Brackets</a></li>
+                            <li><a href="#numbers">Numbers</a></li>
                             
                         </ul>
                         <ul class="nav nav-tabs">
                             <li><a href="#extlatin">Extended Latin</a></li>
+                            <li><a href="#sorkin1">Latin Doubles</a></li>
                             <li><a href="#Cyrillic1">Cyrillic Sentence Case</a></li>
                             <li><a href="#Cyrillic2">Cyrillic Uppercase</a></li>
                             <li><a href="#Cyrillic3">Cyrillic Lowercase</a></li>
                             <li><a href="#colours">Colours</a></li>
-                            <li><a href="#sorkin1">Latin Doubles</a></li>
+                            <li><a href="#buttons">Buttons+</a></li>
+
                         </ul>
                 
 
@@ -1358,6 +1366,7 @@
 </div>
                         <!-- -->
                         <div id="sorkin1">
+                            <p class="notelabel">These are the combinations most likely to create clashes and / or spacing problems.</p>
                             <div style="overflow: hidden; ">
                                 <p class="sizelabel">16px</p>
                         <p style="font-size: 16px;">Haas Nibble Lucca Riddle Neem Safflower Haggard Hochhaus Liiert Ujjak Lekker Mills Bomme Mannen Voodoo Sjøørret Rappe Maqqi Terror Kassa Little Bastuugn Halvveis Glowworm Zaxxon Pyyniki Fuzz Hrææta</p>
@@ -1378,60 +1387,304 @@
                             </div>
                         </div>
                         
-                        <!-- -->
+                        <!-- START HYPHENS -->
                         
-                        <div id="hyphens">
+                        <div class="row-fluid" id="hyphens">
+                            <p class="notelabel">Everyone seems to make the longest hyphen too short making it unclear that in the above case you are talking about a journey. Other hyphen use examples should be added.</p>
                             <div style="overflow: hidden;">
                                 
                                 <div class="span3">
                                 <p class="sizelabel">21px</p>
-                                <p style="font-size: 21px;">Clackton-on-Sea—London<br>
+                                <p style="font-size: 21px;">Clacton-on-Sea—London<br>
                                 Paris–London<br>
                                 ‘You sad —!’<br>
                                 Semi-liquid<br>
                                 06:12–11:07</p>
-                                    </div>
-                        
-                        <div class="span3">
+                                    
                                 <p class="sizelabel">16px</p>
-                                <p style="font-size: 16px;">Clackton-on-Sea—London<br>
+                                <p style="font-size: 16px;">Clacton-on-Sea—London<br>
                                 Paris–London<br>
                                 ‘You sad —!’<br>
                                 Semi-liquid<br>
                                 06:12–11:07</p>
-                        </div>
                         
-                        <div class="span2">
                                 <p class="sizelabel">14px</p>
-                                <p style="font-size: 14px;">Clackton-on-Sea—London<br>
+                                <p style="font-size: 14px;">Clacton-on-Sea—London<br>
                                 Paris–London<br>
                                 ‘You sad —!’<br>
                                 Semi-liquid<br>
                                 06:12–11:07</p>
-                        </div>
-                        <div class="span2">
+                        
                                 <p class="sizelabel">12px</p>
-                                <p style="font-size: 12px;">Clackton-on-Sea—London<br>
+                                <p style="font-size: 12px;">Clacton-on-Sea—London<br>
                                 Paris–London<br>
                                 ‘You sad —!’<br>
                                 Semi-liquid<br>
                                 06:12–11:07</p>
-                            </div>
-                                <div class="span2">
+                            
                                     <p class="sizelabel">10px</p>
-                                    <p style="font-size: 10px;">Clackton-on-Sea—London<br>
+                                    <p style="font-size: 10px;">Clacton-on-Sea—London<br>
                                     Paris–London<br>
                                     ‘You sad —!’<br>
                                     Semi-liquid<br>
                                     06:12–11:07</p>
                                 </div>
-                                
+                                                                
                         </div>
                             </div>
+                        
+                        
+                        <!-- -######### START BRACKETS -->
+
+                        
+                        <div class="row-fluid" id="brackets">
+                            <p class="notelabel">All three enclosing forms need to feel similar in greyness via weight and spacing. Massing them helps you to see differences.</p>
+                            <div class="span12">
+                                <p class="sizelabel">21px</p>
+                            <p style="font-size: 21px;">
+                            (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                            {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                            [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                            (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                            {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                            [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                            
+                            <p class="sizelabel">18px</p>
+                            <p style="font-size: 18px;">
+                            (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                            {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                            [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                            (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                            {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                            [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                            
+                            <p class="sizelabel">16px</p>
+                            <p style="font-size: 16px;">
+                            (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                            
+                            {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                            
+                            [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                            
+                            (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                            
+                            {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                            
+                            [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                        
+                                <p class="sizelabel">14px</p>
+                                <p style="font-size: 14px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">12px</p>
+                                <p style="font-size: 12px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">11px</p>
+                                <p style="font-size: 11px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">10px</p>
+                                <p style="font-size: 10px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">9px</p>
+                                <p style="font-size: 9px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">8px</p>
+                                <p style="font-size: 8px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">7px</p>
+                                <p style="font-size: 7px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                                
+                                <p class="sizelabel">6px</p>
+                                <p style="font-size: 6px;">
+                                (a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(ß)(t)(u)(v)(w)(x)(y)(z)<br>
+                                {a}{b}{c}{ß}{d}{e}{f}{g}{h}{i}{j}{k}{l}{m}{n}{o}{p}{q}{r}{s}{ß}{t}{u}{v}{w}{x}{y}{z}<br>
+                                [a][b][c][d][e][f][g][h][i][j][k][l][m][n][o][p][q][r][s][ß][ü][t][u][v][w][x][y][z]<br>
+                                (A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)<br>
+                                {A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}<br>
+                                [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][Ü][T][U][V][W][X][Y][Z]</p>
+                            </div>
+                            
+                            </div>
+
+                        <!-- -######### START NUMBERS -->
+                        <div class="row-fluid" id="numbers">
+                            <p class="notelabel">Note: Heavier or lighter lines indicate a problem in spacing and or glyph design. All the financial glyphs should feel a bit similar in terms of heft and relative importance/prominence.</p>
+                            <div class="span12">
+                                <p class="sizelabel">21px</p>
+                                <p style="font-size: 21px;">
+                            00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                            30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                            61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                            92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                            43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                            74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">18px</p>
+                                <p style="font-size: 18px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">16px</p>
+                                <p style="font-size: 16px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+
+                                <p class="sizelabel">14px</p>
+                                <p style="font-size: 14px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">12px</p>
+                                <p style="font-size: 12px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">11px</p>
+                                <p style="font-size: 11px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">10px</p>
+                                <p style="font-size: 10px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">9px</p>
+                                <p style="font-size: 9px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">8px</p>
+                                <p style="font-size: 8px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">7px</p>
+                                <p style="font-size: 7px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                                
+                                <p class="sizelabel">6px</p>
+                                <p style="font-size: 6px;">
+                                00 01 02 03 04 05 06 07 08 09 10 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29<br>
+                                30 31 32 33 34 35 36 37 38 39 40 41 42 43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60<br>
+                                61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91<br>
+                                92 93 94 95 96 97 98 99 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42<br>
+                                43 4 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73<br>
+                                74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 20 21 22 23 24<br></p>
+                            </div>
+                            <div class="span12">
+                                <p class="sizelabel">21px</p>
+                                <p style="font-size: 21px;">
+¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">18px</p>
+                                <p style="font-size: 18px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">16px</p>
+                                <p style="font-size: 16px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">14px</p>
+                                <p style="font-size: 14px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">12px</p>
+                                <p style="font-size: 12px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">10px</p>
+                                <p style="font-size: 10px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">8px</p>
+                                <p style="font-size: 8px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                <p class="sizelabel">6px</p>
+                                <p style="font-size: 6px;">
+                                ¢5  30¢   $25,000   67$   €5,234    17€    £423    120£   ¥6,000    234¥   ¤23    456¤</p>
+                                </div>
+
+                            
+                        </div>
+
                       
-                        <!-- -######### -->
+                        <!-- -######### START QUOTES -->
                         
                         <div id="quotes">
+                            <p class="notelabel">There are a lot of ways of making quotes. Curly quotes like to fight with f.</p>
                             <div style="overflow: hidden;">
                                 
                                 <div class="span4">
@@ -1480,9 +1733,217 @@
                                 </div>
                             </div>
                         
+                        <!-- -BUTTONS -->
+                        <div id="buttons">
+                            
+                           
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-large">HOME</div>
+                                    <div class="btn btn-inverse btn-large">OPEN</div>
+                                    <div class="btn btn-inverse btn-large">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-large">LINKS</div>
+                                    <div class="btn btn-inverse btn-large">INFO</div>
+                                    <div class="btn btn-inverse btn-large">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-large">PLACES</div>
+                                    <div class="btn btn-inverse btn-large">PLAY</div>
+                                    <div class="btn btn-inverse btn-large">TERMINAL</div>
+                                    <div class="btn btn-inverse btn-large">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse">HOME</div>
+                                    <div class="btn btn-inverse">OPEN</div>
+                                    <div class="btn btn-inverse">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse">LINKS</div>
+                                    <div class="btn btn-inverse">INFO</div>
+                                    <div class="btn btn-inverse">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse">PLACES</div>
+                                    <div class="btn btn-inverse">PLAY</div>
+                                    <div class="btn btn-inverse">TERMINAL</div>
+                                    <div class="btn btn-inverse">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-small">HOME</div>
+                                    <div class="btn btn-inverse btn-small">OPEN</div>
+                                    <div class="btn btn-inverse btn-small">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-small">LINKS</div>
+                                    <div class="btn btn-inverse btn-small">INFO</div>
+                                    <div class="btn btn-inverse btn-small">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-small">PLACES</div>
+                                    <div class="btn btn-inverse btn-small">PLAY</div>
+                                    <div class="btn btn-inverse btn-small">TERMINAL</div>
+                                    <div class="btn btn-inverse btn-small">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-mini">HOME</div>
+                                    <div class="btn btn-inverse btn-mini">OPEN</div>
+                                    <div class="btn btn-inverse btn-mini">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-mini">LINKS</div>
+                                    <div class="btn btn-inverse btn-mini">INFO</div>
+                                    <div class="btn btn-inverse btn-mini">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-inverse btn-mini">PLACES</div>
+                                    <div class="btn btn-inverse btn-mini">PLAY</div>
+                                    <div class="btn btn-inverse btn-mini">TERMINAL</div>
+                                    <div class="btn btn-inverse btn-mini">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-large">HOME</div>
+                                    <div class="btn btn-large">OPEN</div>
+                                    <div class="btn btn-large">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-large">LINKS</div>
+                                    <div class="btn btn-large">INFO</div>
+                                    <div class="btn btn-large">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-large">PLACES</div>
+                                    <div class="btn btn-large">PLAY</div>
+                                    <div class="btn btn-large">TERMINAL</div>
+                                    <div class="btn btn-large">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn">HOME</div>
+                                    <div class="btn">OPEN</div>
+                                    <div class="btn">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn">LINKS</div>
+                                    <div class="btn">INFO</div>
+                                    <div class="btn">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn">PLACES</div>
+                                    <div class="btn">PLAY</div>
+                                    <div class="btn">TERMINAL</div>
+                                    <div class="btn">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-small">HOME</div>
+                                    <div class="btn btn-small">OPEN</div>
+                                    <div class="btn btn-small">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-small">LINKS</div>
+                                    <div class="btn btn-small">INFO</div>
+                                    <div class="btn btn-small">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-small">PLACES</div>
+                                    <div class="btn btn-small">PLAY</div>
+                                    <div class="btn btn-small">TERMINAL</div>
+                                    <div class="btn btn-small">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <div class="btn btn-mini">HOME</div>
+                                    <div class="btn btn-mini">OPEN</div>
+                                    <div class="btn btn-mini">CLOSE</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-mini">LINKS</div>
+                                    <div class="btn btn-mini">INFO</div>
+                                    <div class="btn btn-mini">MAIL</div>
+                                </div>
+                                <div class="btn-group">
+                                    <div class="btn btn-mini">PLACES</div>
+                                    <div class="btn btn-mini">PLAY</div>
+                                    <div class="btn btn-mini">TERMINAL</div>
+                                    <div class="btn btn-mini">DOWNLOAD</div>
+                                </div>
+                            </div>
+                            
+                            <br>
+
+                            
+                            <div class="pagination pagination-large">
+                                <ul>
+                                    <li><a href="#">Prev</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">Next</a></li>                                </ul>
+                            </div>
+                            <div class="pagination">
+                                <ul>
+                                    <li><a href="#">Prev</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">Next</a></li>                                </ul>
+                            </div>
+                            <div class="pagination pagination-small">
+                                <ul>
+                                    <li><a href="#">Prev</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">Next</a></li>                                </ul>
+                            </div>
+                            <div class="pagination pagination-mini">
+                                <ul>
+                                    <li><a href="#">Prev</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">Next</a></li>                                </ul>
+                            </div>
+                            
+                        </div>
+
                         
+                            <!-- NO TEST PAGES BENEATH HERE -->
+
+                        </div>
+                    </div>
                         
-                        <!-- NO TEST PAGES BENEATH HERE -->
+                        <!-- START OF FOOTER -->
                                     <!-- PIE -->
                                     <div id="pie">
                                         <p>This Font Testing Page by is Based on Fontdragr (fontdragr.com)</p>
